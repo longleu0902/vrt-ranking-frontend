@@ -76,12 +76,12 @@ export const Nav = () => {
         },
         {
             id: 9,
-            name: "Fish speed junior womane",
+            name: "Fish speed junior woman",
             active: false
         },
         {
             id: 10,
-            name: "Fish speed junior womane",
+            name: "Fish speed junior woman",
             active: false
         },
         {
@@ -134,7 +134,7 @@ export const Nav = () => {
                     <div className='nav-box'>
                         <div className='nav-item' style={{ opacity: 0.8 }}>
                             <div className='triangle'></div>
-                            <div className='nav-item-icon'>
+                            <div style={{height : 35}} className='nav-item-icon'>
                                 {menuTop.map((item, index) => {
                                     return (
                                         <div key={index} onClick={() => clickMenuTop(item)} className='item-menu-top'>

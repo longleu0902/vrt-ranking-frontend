@@ -47,7 +47,7 @@ export const Banner = () => {
 
     setTimeout(() => {
         setIndex()
-    }, 1000)
+    }, 2000)
 
 
     useEffect(() => {

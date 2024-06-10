@@ -13,7 +13,7 @@
 .nav-box {
     position: absolute;
     right: 0;
-    top: 150px;
+    top: 130px;
     height: 150px;
     width: 100%;
     justify-content: flex-end;
@@ -25,20 +25,20 @@
 
 .nav-item {
     width: 50%;
-    height: 50px;
+    height: 35px;
     background-color: #ccc;
     position: relative;
     
 }
 
 .triangle {
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-bottom: 100px solid #ccc;
+    /* width: 0;
+    height: 0; */
+    border-left: 35px solid transparent;
+    border-right: 35px solid transparent;
+    border-bottom: 35px solid #ccc;
     position: absolute;
-    left: -50px;
+    left: -35px;
 }
 
 .nav-item-icon {
@@ -49,11 +49,14 @@
 
 .item-menu-top {
     /* background-color: aqua; */
+    align-items: center;
+    line-height: 1px;
 }
 
 
 .text-menu {
     font-style: italic;
+    font-size:  14px;
 }
 
 .text-menu:hover {
@@ -67,6 +70,7 @@
     font-weight: 700;
     animation: moveAndResize 0.5s forwards;
     font-style: italic;
+    font-size: 14px;
 }
 
 @keyframes moveAndResize {
@@ -85,6 +89,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0 5px;
     /* clip-path: polygon(0 25%, 25% 0, 100% 0, 100% 100%, 75% 100%, 0 75%); */
 
 
