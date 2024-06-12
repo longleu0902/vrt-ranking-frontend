@@ -29,9 +29,13 @@
 
 .button-slide {
     border-radius: 20%;
-    background-color: #000;
     color: #fff;
-    border: 1px solid #000;
+    border: none;
+    --tw-bg-opacity: 1;
+    background-color: rgb(67 69 88 / var(--tw-bg-opacity));
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 3), 0 8px 16px rgba(0, 0, 0, 3);
+    box-sizing: border-box;
+    font-weight: 700;
 }
 
 .top-player-list-item {

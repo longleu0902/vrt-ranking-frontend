@@ -10,6 +10,7 @@
     padding: 0px 12px;
     background-color: #ccc;
     margin: 0;
+    align-items: center;
 }
 
 .item-ranking {
@@ -20,6 +21,8 @@
 }
 .rank {
     width: 5%;
+    color: #000;
+        font-weight: 900;
 
 }
 .change {
@@ -42,15 +45,15 @@
 
 }
 .age {
-    width: 10%;
+    width: 5%;
 
 }
 
 .exam {
-    width: 20%;
+    width: 15%;
 }
 .point {
-    width: 20%;
+    width: 15%;
     font-weight: 900;
 
 }
@@ -72,4 +75,42 @@
     justify-content: center;
     display: flex;
     border-radius: 5px;
+}
+.search {
+    width: 5%;
+}
+
+.search-input {
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+
+}
+
+.search-group {
+    height: 25px;
+    width: 100%;
+    /* color: rgb(249, 106, 106); */
+}
+
+.btn-export {
+
+    background-color: #000;
+    border: 1px solid #000;
+    color: #fff;
+    font-weight: 800;
+    margin: 12px 0px;
+    padding: 12px 24px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+.btn-export:hover {
+   opacity: 0.5;
 }

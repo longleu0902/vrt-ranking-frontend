@@ -24,7 +24,7 @@ export const Nav = () => {
     },
     {
       id: 4,
-      name: "Rakings",
+      name: "Ranking",
       active: false,
     },
     {
@@ -37,22 +37,22 @@ export const Nav = () => {
   const defaultMenuBottom = [
     {
       id: 1,
-      name: "Senior male speed",
+      name: "Speed skating man",
       active: false,
     },
     {
       id: 2,
-      name: "Senior female speed",
+      name: "Speed skating women",
       active: false,
     },
     {
       id: 3,
-      name: "Junior male speed",
+      name: "Freestyle slider man ",
       active: false,
     },
     {
       id: 4,
-      name: "Junior female speed",
+      name: "Freestyle slider woman ",
       active: false,
     },
     {
@@ -107,8 +107,8 @@ export const Nav = () => {
     },
   ];
 
-  const [menuTop, setMenuTop] = useState(defautMenuTop);
-  const [menuBottom, setMenuBottom] = useState(defaultMenuBottom);
+  const [menuTop, setMenuTop] = useState([]);
+  const [menuBottom, setMenuBottom] = useState([]);
 
   const clickMenuTop = (data) => {
     const _menuTop = [...defautMenuTop];
@@ -312,32 +312,20 @@ export const Nav = () => {
                       key={index}
                       onClick={() => clickMenuBottom(item)}
                       style={{
-                        background: item.active ? "#fff" : "",
+                        borderBottom: item.active ? "5px solid #ccc" : "",
                       }}
                       className="item-menu-bottom"
                     >
-                      {/* {item.active ? (
-                                                <div className='borderLeftActive'></div>
-                                            ) : (
-                                                <div className='borderLeft'></div>
-                                            )} */}
                       <p
                         style={{
-                          color: item.active ? "#000" : "#fff",
-                          // position: 'absolute',
-                          // zIndex: 1,
-                          // left: 0,
+                          color: "#fff",
                           cursor: "pointer",
                           fontSize: 10,
+                          fontWeight : item.active ? "900" : ''
                         }}
                       >
                         {item.name}
                       </p>
-                      {/* {item.active ? (
-                                                <div className='borderRightActive'></div>
-                                            ) : (
-                                                <div className='borderRight'></div>
-                                            )} */}
                     </div>
                   );
                 })}
