@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom"
 import { Home } from "../component/Home/Home"
-import { Ranking } from "../component/\bRanking/Ranking"
+import { Ranking } from "../component/ranking/Ranking"
 
 
 
