@@ -20,7 +20,7 @@ export const Banner = () => {
             link: "https://www.worldskate.org/templates/ifrit/images/inline-hockey.jpg"
         },
     ]
-    const [slider, setSlider] = useState(1)
+    const [slider, setSlider] = useState(5)
     const changeSlide = (id) => {
         if (id == 1) {
             return "https://www.worldskate.org/templates/ifrit/images/testata-rollerFree.jpg"
