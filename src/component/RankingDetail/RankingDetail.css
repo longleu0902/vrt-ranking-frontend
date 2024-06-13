@@ -22,7 +22,7 @@
 .rank {
     width: 5%;
     color: #000;
-        font-weight: 900;
+    font-weight: 900;
 
 }
 .change {
@@ -50,16 +50,16 @@
 }
 
 .exam {
-    width: 15%;
+    width: 5%;
 }
 .point {
-    width: 15%;
+    width: 20%;
     font-weight: 900;
 
 }
 .avatar-name {
     width: 50px;
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
     border-radius: 50%;
     height: 50px;
     align-items: center;
@@ -77,7 +77,7 @@
     border-radius: 5px;
 }
 .search {
-    width: 5%;
+    width: 10%;
 }
 
 .search-input {

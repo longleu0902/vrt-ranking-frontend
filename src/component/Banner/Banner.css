@@ -5,6 +5,8 @@
     
     background-size: cover; /* Đảm bảo hình ảnh phủ kín phần tử */
     background-position: center; /* Đặt vị trí hình ảnh ở giữa */
+    max-width: 100%;
+    max-width: 100%;
 }
 .box {
     width: 28%;

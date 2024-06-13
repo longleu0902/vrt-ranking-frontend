@@ -106,7 +106,7 @@ export const HeaderHome = () => {
     <>
       <header className="header-home">
         <Row>
-          <Col span={4}>
+          <Col xs={24} sm={8} md={8} lg={4}>
             {/* <p style={{fontWeight : 700 , color:'#fff'}}>Roller skating ranking</p> */}
             <div style={{ display: "flex" }}>
               <div className="title">
@@ -127,7 +127,7 @@ export const HeaderHome = () => {
               <img style={{ height: 140 }} src={headerContent} />
             </div>
           </Col>
-          <Col span={20}>
+          <Col xs={24} sm={16} md={16} lg={20}>
             <div
               style={{
                 display: "flex",
@@ -158,13 +158,13 @@ export const HeaderHome = () => {
               >
                 {renderPlayerTop.map((item, index) => {
                   return (
-                    <div className="top-player-list-item">
+                    <div key={index} className="top-player-list-item">
                       <div className="flex-end-item">
                         <a className="number-ranking">{item?.rank}</a>
                       </div>
                       <img
                         style={{ width: 100, height: 100 }}
-                        src={item.avatar}
+                        src={item?.avatar}
                       />
                       <div className="flex-end-item">
                         <p
@@ -174,7 +174,7 @@ export const HeaderHome = () => {
                             fontSize: 12,
                           }}
                         >
-                          {item.name}
+                          {item?.name}
                         </p>
                         <a style={{ color: "#1dd01d", fontWeight: 700 }}>
                           1400
@@ -182,7 +182,7 @@ export const HeaderHome = () => {
                       </div>
 
                       <div className="logoTeam">
-                        <img src={item.logo} />
+                        <img src={item?.logo} />
                       </div>
                     </div>
                   );
