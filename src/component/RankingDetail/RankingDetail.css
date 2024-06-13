@@ -1,0 +1,116 @@
+.table-ranking {
+    border: 2px solid #000;
+    width: 100%;
+    border-radius:  5px;
+}
+
+.tab-ranking {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 12px;
+    background-color: #ccc;
+    margin: 0;
+    align-items: center;
+}
+
+.item-ranking {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 12px;
+    margin: 0;
+}
+.rank {
+    width: 5%;
+    color: #000;
+        font-weight: 900;
+
+}
+.change {
+    width: 10%;
+
+}
+
+.name {
+    display: flex;
+    width: 20%;
+    gap: 20px;
+    justify-content: center;
+
+}
+.team {
+    display: flex;
+    width: 30%;
+    gap: 20px;
+    justify-content: center;
+
+}
+.age {
+    width: 5%;
+
+}
+
+.exam {
+    width: 15%;
+}
+.point {
+    width: 15%;
+    font-weight: 900;
+
+}
+.avatar-name {
+    width: 50px;
+    border: 1px solid #000;
+    border-radius: 50%;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.avatar-team {
+    width: 70px;
+    border: 1px solid #ccc;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border-radius: 5px;
+}
+.search {
+    width: 5%;
+}
+
+.search-input {
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+
+}
+
+.search-group {
+    height: 25px;
+    width: 100%;
+    /* color: rgb(249, 106, 106); */
+}
+
+.btn-export {
+
+    background-color: #000;
+    border: 1px solid #000;
+    color: #fff;
+    font-weight: 800;
+    margin: 12px 0px;
+    padding: 12px 24px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+.btn-export:hover {
+   opacity: 0.5;
+}
