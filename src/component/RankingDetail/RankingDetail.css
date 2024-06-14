@@ -37,6 +37,11 @@
     justify-content: center;
 
 }
+
+.name:hover {
+    color: rgb(133, 30, 30);
+    cursor: pointer;
+}
 .team {
     display: flex;
     width: 30%;

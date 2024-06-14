@@ -64,6 +64,7 @@
     animation: moveAndResize 0.5s forwards;
     font-style: italic;
     font-size: 14px;
+    cursor: pointer;
 }
 
 @keyframes moveAndResize {

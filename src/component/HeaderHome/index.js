@@ -1,8 +1,9 @@
 import "./styles.css";
-import { Row, Col } from "antd";
+import { Row, Col, Modal } from "antd";
 import headerContent from "../../Image/headerContent.png";
 import logotest from "../../Image/logoteam.png";
 import React, { useState } from "react";
+import { InfoPlayer } from "../info-player";
 
 export const HeaderHome = () => {
   const fakeData = [
@@ -90,8 +91,9 @@ export const HeaderHome = () => {
   ];
 
   const [renderPlayerTop, setRenderPlayerTop] = useState(fakeData);
-
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [showModel, setShowModel] = useState(false);
+  const [dataInfo , setDataInfo] = useState(null)
 
   const goToPrev = () => {
     setCurrentIndex((prevIndex) => Math.max(prevIndex - 1, 0));
@@ -101,6 +103,12 @@ export const HeaderHome = () => {
     setCurrentIndex((prevIndex) =>
       Math.min(prevIndex + 1, renderPlayerTop.length - 1)
     );
+  };
+
+  const hanldShowInfo = (data) => {
+    setDataInfo(data)
+    setShowModel(true);
+
   };
   return (
     <>
@@ -158,7 +166,11 @@ export const HeaderHome = () => {
               >
                 {renderPlayerTop.map((item, index) => {
                   return (
-                    <div key={index} className="top-player-list-item">
+                    <div
+                      onClick={() => hanldShowInfo(item)}
+                      key={index}
+                      className="top-player-list-item"
+                    >
                       <div className="flex-end-item">
                         <a className="number-ranking">{item?.rank}</a>
                       </div>
@@ -192,6 +204,16 @@ export const HeaderHome = () => {
           </Col>
         </Row>
       </header>
+      <Modal
+        title="INFOMATION"
+        centered
+        open={showModel}
+        onCancel={() => setShowModel(false)}
+        footer={null}
+        width="50%"
+      >
+        <InfoPlayer data={dataInfo} />
+      </Modal>
     </>
   );
 };

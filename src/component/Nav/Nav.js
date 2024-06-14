@@ -133,12 +133,15 @@ export const Nav = () => {
       case 2:
         //
         clickMenuBottom(undefined);
+        navigate("/about")
 
         break;
 
       case 3:
         //
         clickMenuBottom(undefined);
+        navigate("/events");
+
 
         break;
 
@@ -150,6 +153,7 @@ export const Nav = () => {
       case 5:
         //
         clickMenuBottom(undefined);
+        navigate("/contact")
 
         break;
     }

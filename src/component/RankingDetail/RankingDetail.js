@@ -4,21 +4,31 @@ import search from "../../Image/Search.png";
 import { useRef, useState } from "react";
 import { uid } from "uid";
 import * as XLSX from 'xlsx';
-import { Avatar, Button } from "antd";
+import { Avatar,  Modal } from "antd";
 import { UserOutlined } from "@ant-design/icons";
+import { InfoPlayer } from "../info-player";
 
 export const RankingDetail = (props) => {
   const fakeData = [
     {
       id: uid().slice(0, 4),
       name: "Hoang Huy Hieu",
-      tean: "Roller Team Binh Thanh",
+      tean: "Roller Team abc Thanh",
       age: "20",
+      gender : "Men",
       avatar: "",
       logoTeam: logo,
       exams: "2",
+      category : "Classic freestyle slalom" ,
       point: 1500,
       rank: 1,
+      achievements: [
+        { id: 1, date: "01/01/2023", achievement: "Đoạt Huy chương Vàng Olympic" },
+        { id: 2, date: "02/02/2023", achievement: "Vô địch Giải Grand Slam" },
+        { id: 3, date: "03/03/2023", achievement: "Lập kỷ lục thế giới" },
+        { id: 4, date: "04/04/2023", achievement: "Đoạt Huy chương Vàng Thế vận hội" },
+        { id: 5, date: "05/05/2023", achievement: "Đạt giải Cầu thủ xuất sắc nhất năm" },
+      ]
     },
     {
       id: uid().slice(0, 4),
@@ -331,6 +341,8 @@ export const RankingDetail = (props) => {
   const [list, setList] = useState(fakeData);
   const [keyWord, setKeyWord] = useState("");
   const itemRef = useRef(null);
+  const [modalInfo, setModalInfo] = useState(false);
+  const [dataInfo, setDataInfo] = useState(null);
 
   const handleSearch = (e) => {
     const searchTerm = e.target.value;
@@ -339,16 +351,15 @@ export const RankingDetail = (props) => {
       item.id.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
-
     //Sroll to item
     if (e.key === "Enter") {
       if (filtered.length > 0) {
         const element = itemRef.current;
-        if (element) { 
+        if (element) {
           const yOffset = -100;
           const y = element.offsetTop + yOffset;
           window.scrollTo({ top: y, behavior: "smooth" });
-        };
+        }
       }
     }
   };
@@ -360,6 +371,11 @@ export const RankingDetail = (props) => {
     XLSX.writeFile(wb, "data.xlsx");
   };
 
+  const handleMovePlayerInfo = (data) => {
+    // navigate("/info-player", { state: { ...data } });
+    setDataInfo({ ...data });
+    setModalInfo(true);
+  };
 
   return (
     <>
@@ -404,7 +420,7 @@ export const RankingDetail = (props) => {
                 {item.id}
               </div>
               {/* <p className="change">{item.id}</p> */}
-              <div className="name">
+              <div onClick={() => handleMovePlayerInfo(item)} className="name">
                 <div className="avatar-name">
                   {item.avatar ? (
                     <img
@@ -428,7 +444,7 @@ export const RankingDetail = (props) => {
                     alt="Logo"
                   />
                 </div>
-                <p>Roller Team Binh Dinh</p>
+                <p>{item?.tean}</p>
               </div>
               <p className="age">{item?.age}</p>
               <p className="exam">{item?.exams}</p>
@@ -447,6 +463,16 @@ export const RankingDetail = (props) => {
           );
         })}
       </div>
+      <Modal
+        title="INFOMATION"
+        centered
+        open={modalInfo}
+        onCancel={() => setModalInfo(false)}
+        footer={null}
+        width="50%"
+      >
+        <InfoPlayer data={dataInfo} />
+      </Modal>
     </>
   );
 };

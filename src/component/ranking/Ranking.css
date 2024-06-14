@@ -32,3 +32,16 @@
     background: #000;
     color: #fff;
 }
+
+.custom-checkbox .ant-checkbox-inner {
+    background-color: #000; /* Màu nền của checkbox */
+    border-color: rgb(170, 170, 187); /* Màu viền của checkbox */
+  }
+  
+  .custom-checkbox .ant-checkbox-inner::after {
+    border-color: white; /* Màu của dấu check */
+  }
+
+
+
+

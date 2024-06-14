@@ -1,0 +1,8 @@
+.text-timeline {
+    font-weight: 700;
+
+}
+
+.text-timeline:hover {
+    color: #ccc !important;
+}

@@ -2,12 +2,13 @@ import { useParams } from "react-router-dom";
 import './Ranking.css';
 import { RankingDetail } from "../RankingDetail/RankingDetail";
 import { useState } from "react";
-import { Checkbox } from "antd";
+import { Checkbox, Modal } from "antd";
 import { UserOutlined } from "@ant-design/icons";
-import { Model } from "../model-login";
+import { LoginFrom } from "../login-form";
 export const Ranking = () => {
   const { slug, id } = useParams();
-  const [showModel, setShowModel] = useState(false);
+  const [modalLogin, setModalLogin] = useState(false);
+
   //check-box
   const CheckboxGroup = Checkbox.Group;
   const plainOptions = [" < 5", " 5-7 ", "7-9", "9-12", "12-15", " >16"];
@@ -24,20 +25,13 @@ export const Ranking = () => {
 
   // console.log(checkedList);
 
-  const hanldShowPlayerDetail = () => {
-    setShowModel(true)
-  };
-
   return (
     <div className="container">
-      {showModel && (
-        <Model setShowModel={setShowModel} />
-      )}
       <div className="title-ranking">
         <h3 style={{ textAlign: "start" }}>
           RANKING {slug.toUpperCase().replace(/-/g, " ")}
         </h3>
-        <button onClick={hanldShowPlayerDetail} className="btn-login">
+        <button onClick={() => setModalLogin(true)} className="btn-login">
           <UserOutlined />
           <a style={{ margin: "0 5px" }}>Login</a>
         </button>
@@ -46,6 +40,7 @@ export const Ranking = () => {
       {(id == 1 || id == 2) && (
         <div className="check-box">
           <Checkbox
+            className="custom-checkbox"
             indeterminate={indeterminate}
             onChange={onCheckAllChange}
             checked={checkAll}
@@ -53,6 +48,7 @@ export const Ranking = () => {
             ALL
           </Checkbox>
           <CheckboxGroup
+            className="custom-checkbox"
             options={plainOptions}
             value={checkedList}
             onChange={onChange}
@@ -75,6 +71,17 @@ export const Ranking = () => {
       ) : (
         <RankingDetail />
       )}
+      <Modal
+        centered
+        open={modalLogin}
+        onCancel={() => setModalLogin(false)}
+        footer={null}
+        width="50%"
+        style={{textAlign:'center'}}
+      >
+        <h2>LOGIN FORM</h2>
+        <LoginFrom />
+      </Modal>
     </div>
   );
 };
