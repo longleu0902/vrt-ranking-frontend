@@ -6,25 +6,19 @@
 
 }
 
-/* .banner {
-    width: 100%;
-} */
 .nav-box {
     position: absolute;
     right: 0;
-    top: 130px;
-    height: 150px;
     width: 100%;
     justify-content: flex-end;
     align-items: flex-end;
     display: flex;
-    /* background-color: black; */
     flex-direction: column;
+    bottom: -45px;
 }
 
 .nav-item {
     width: 50%;
-    height: 35px;
     background-color: #ccc;
     position: relative;
     
