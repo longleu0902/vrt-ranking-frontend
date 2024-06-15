@@ -1,3 +1,19 @@
 .layout {
     padding: 45px 0px;
 }
+
+@media (min-width:0px) and (max-width:695px) {
+    .layout {
+        padding: 0px 0px;
+    }
+}
+
+@media (min-width:696px) and (max-width:1023px) {
+    .layout {
+        padding: 0px 0px;
+    }
+}
+
+@media (min-width:1024px) {
+  
+}

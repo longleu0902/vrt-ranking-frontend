@@ -469,7 +469,7 @@ export const RankingDetail = (props) => {
         open={modalInfo}
         onCancel={() => setModalInfo(false)}
         footer={null}
-        width="50%"
+        width="auto"
       >
         <InfoPlayer data={dataInfo} />
       </Modal>

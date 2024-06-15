@@ -1,7 +1,7 @@
 .table-ranking {
     border: 2px solid #000;
     width: 100%;
-    border-radius:  5px;
+    border-radius: 5px;
 }
 
 .tab-ranking {
@@ -19,12 +19,14 @@
     padding: 12px 12px;
     margin: 0;
 }
+
 .rank {
     width: 5%;
     color: #000;
     font-weight: 900;
 
 }
+
 .change {
     width: 10%;
 
@@ -42,6 +44,7 @@
     color: rgb(133, 30, 30);
     cursor: pointer;
 }
+
 .team {
     display: flex;
     width: 30%;
@@ -49,6 +52,7 @@
     justify-content: center;
 
 }
+
 .age {
     width: 5%;
 
@@ -57,11 +61,13 @@
 .exam {
     width: 5%;
 }
+
 .point {
     width: 20%;
     font-weight: 900;
 
 }
+
 .avatar-name {
     width: 50px;
     /* border: 1px solid #000; */
@@ -81,6 +87,7 @@
     display: flex;
     border-radius: 5px;
 }
+
 .search {
     width: 10%;
 }
@@ -117,5 +124,73 @@
 }
 
 .btn-export:hover {
-   opacity: 0.5;
+    opacity: 0.5;
 }
+
+
+@media (min-width:0px) and (max-width:695px) {
+    .age {
+        display: none;
+
+    }
+
+    .exam {
+        display: none;
+    }
+
+    .avatar-name {
+        display: none;
+
+    }
+
+    .avatar-team {
+        display: none;
+    }
+
+
+    .rank {
+        font-size: 10px;
+
+    }
+
+    .change {
+        font-size: 10px;
+
+
+    }
+
+    .name {
+        font-size: 10px;
+
+    }
+
+    .point {
+        font-size: 10px;
+
+    }
+
+    .team {
+        font-size: 10px;
+    }
+
+    .search {
+        font-size: 10px;
+    }
+
+    .btn-login{
+        display: none;
+    }
+}
+
+@media (min-width:696px) and (max-width:1023px) {
+    .avatar-name {
+        display: none;
+
+    }
+
+    .avatar-team {
+        display: none;
+    }
+}
+
+@media (min-width:1024px) {}

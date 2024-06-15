@@ -21,7 +21,7 @@
     width: 50%;
     background-color: #ccc;
     position: relative;
-    
+
 }
 
 .triangle {
@@ -49,7 +49,7 @@
 
 .text-menu {
     font-style: italic;
-    font-size:  14px;
+    font-size: 14px;
 }
 
 .text-menu:hover {
@@ -71,12 +71,13 @@
     100% {
         transform: scale(1.25);
     }
+
     /* 100% {
         transform: translateY(-20px) scale(1);
     } */
 }
 
-.item-menu-bottom{
+.item-menu-bottom {
     background-color: #000;
     position: relative;
     width: 150px;
@@ -87,4 +88,43 @@
     /* clip-path: polygon(0 25%, 25% 0, 100% 0, 100% 100%, 75% 100%, 0 75%); */
 
 
+}
+
+@media (min-width:0px) and (max-width:695px) {
+    .nav-box {
+        display: none;
+    }
+
+    .nav-box-mobie {
+        width: 100%;
+        justify-content: flex-start;
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        background-color: #000;
+    }
+}
+
+@media (min-width:696px) and (max-width:1023px) {
+    .nav-box-mobie {
+        width: 100%;
+        justify-content: flex-start;
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        background-color: #000;
+    }
+
+    .nav-box {
+        display: none;
+    }
+}
+
+@media (min-width:1024px) {
+    .nav-box-mobie {
+        display: none;
+        /* max-width: 100%; */
+    }
 }

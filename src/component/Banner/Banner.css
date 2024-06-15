@@ -2,12 +2,15 @@
     height: 250px;
     background-color: #000;
     position: relative;
-    
-    background-size: cover; /* Đảm bảo hình ảnh phủ kín phần tử */
-    background-position: center; /* Đặt vị trí hình ảnh ở giữa */
+
+    background-size: cover;
+    /* Đảm bảo hình ảnh phủ kín phần tử */
+    background-position: center;
+    /* Đặt vị trí hình ảnh ở giữa */
     max-width: 100%;
     max-width: 100%;
 }
+
 .box {
     width: 28%;
     height: 250px;
@@ -21,6 +24,21 @@
 }
 
 .logo {
-    width:  300px;
+    width: 300px;
     height: 150px;
 }
+
+
+@media (min-width:0px) and (max-width:695px) {
+    .box {
+        width: 100%;
+    }
+}
+
+@media (min-width:696px) and (max-width:1023px) {
+    .box {
+        width: 100%;
+    }
+}
+
+@media (min-width:1024px) {}

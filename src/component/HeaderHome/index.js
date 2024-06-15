@@ -210,7 +210,7 @@ export const HeaderHome = () => {
         open={showModel}
         onCancel={() => setShowModel(false)}
         footer={null}
-        width="50%"
+        width="auto"
       >
         <InfoPlayer data={dataInfo} />
       </Modal>
