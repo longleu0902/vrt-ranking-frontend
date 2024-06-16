@@ -1,10 +1,13 @@
 import "./RankingDetail.css";
 import logo from "../../Image/logoteam.png";
 import search from "../../Image/Search.png";
+import no1 from "../../Image/no1.png";
+import no2 from "../../Image/no2.png";
+import no3 from "../../Image/no3.png";
 import { useRef, useState } from "react";
 import { uid } from "uid";
 import * as XLSX from 'xlsx';
-import { Avatar,  Modal } from "antd";
+import { Avatar, Modal } from "antd";
 import { UserOutlined } from "@ant-design/icons";
 import { InfoPlayer } from "../info-player";
 
@@ -15,11 +18,11 @@ export const RankingDetail = (props) => {
       name: "Hoang Huy Hieu",
       tean: "Roller Team abc Thanh",
       age: "20",
-      gender : "Men",
+      gender: "Men",
       avatar: "",
       logoTeam: logo,
       exams: "2",
-      category : "Classic freestyle slalom" ,
+      category: "Classic freestyle slalom",
       point: 1500,
       rank: 1,
       achievements: [
@@ -407,20 +410,39 @@ export const RankingDetail = (props) => {
           <p className="rank">Rank</p>
         </div>
         {list.map((item, index) => {
+          const defaultBackGround = (index) => {
+            if (index % 2 == 0) {
+              return "#fcf9f9"
+            }
+          }
+
+
+          const topRankingIcon = (index) => {
+            if (index == 0) {
+              return no1
+            }
+            if (index == 1) {
+              return no2
+            }
+            if (index == 2) {
+              return no3
+            }
+          }
           return (
             <div
               key={index}
+              onClick={() => handleMovePlayerInfo(item)}
               ref={keyWord === item.id ? itemRef : null}
               className="item-ranking"
               style={{
-                backgroundColor: keyWord == item.id ? "rgb(249, 106, 106)" : "",
+                backgroundColor: keyWord == item.id ? "rgb(249, 106, 106)" : defaultBackGround(index),
               }}
             >
               <div style={{ padding: "0 6px" }} className="search">
                 {item.id}
               </div>
               {/* <p className="change">{item.id}</p> */}
-              <div onClick={() => handleMovePlayerInfo(item)} className="name">
+              <div className="name">
                 <div className="avatar-name">
                   {item.avatar ? (
                     <img
@@ -457,7 +479,13 @@ export const RankingDetail = (props) => {
                 }}
                 className="rank"
               >
-                {item?.rank}
+
+                {index < 3 ? (
+                  <img className="top-ranking-icon" src={topRankingIcon(index)} />
+
+                ) : (
+                  item?.rank
+                )}
               </p>
             </div>
           );

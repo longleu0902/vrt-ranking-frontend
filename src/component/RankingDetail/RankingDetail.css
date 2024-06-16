@@ -16,9 +16,11 @@
 .item-ranking {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 12px 12px;
     margin: 0;
 }
+
 
 .rank {
     width: 5%;
@@ -127,6 +129,11 @@
     opacity: 0.5;
 }
 
+.top-ranking-icon {
+    width: 40px;
+    height: 40px;
+}
+
 
 @media (min-width:0px) and (max-width:695px) {
     .age {
@@ -179,6 +186,11 @@
 
     .btn-login{
         display: none;
+    }
+
+    .top-ranking-icon {
+        width: 25px;
+        height: 25px;
     }
 }
 

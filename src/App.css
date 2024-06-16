@@ -1,6 +1,8 @@
 .App {
   text-align: center;
   position: relative;
+  font-family: "Montserrat", "Helvetica", "sans-serif";
+
 }
 
 @keyframes App-logo-spin {

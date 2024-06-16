@@ -11,7 +11,7 @@ export const Ranking = () => {
 
   //check-box
   const CheckboxGroup = Checkbox.Group;
-  const plainOptions = [" < 5", " 5-7 ", "7-9", "9-12", "12-15", " >16"];
+  const plainOptions = [" < 5", "6-7 ", "8-9", "10-11", "12-13", " >13"];
   const [checkedList, setCheckedList] = useState([" < 5"]);
   const checkAll = plainOptions.length === checkedList.length;
   const indeterminate =
@@ -37,7 +37,7 @@ export const Ranking = () => {
         </button>
       </div>
 
-      {(id == 1 || id == 2) && (
+      {(id == 1 || id == 2 || id == 3 || id == 4) && (
         <div className="check-box">
           <Checkbox
             className="custom-checkbox"
@@ -56,7 +56,7 @@ export const Ranking = () => {
         </div>
       )}
 
-      {id == 1 || id == 2 ? (
+      {id == 1 || id == 2 || id == 3 || id == 4? (
         <>
           {checkedList &&
             checkedList.map((item, index) => {

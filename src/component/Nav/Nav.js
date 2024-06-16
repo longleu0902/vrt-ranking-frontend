@@ -49,14 +49,15 @@ export const Nav = () => {
         },
         {
             id: 3,
-            name: "Freestyle slider man ",
+            name: "Speed Skating men (Professional)",
             active: false,
         },
         {
             id: 4,
-            name: "Freestyle slider woman ",
+            name: "Speed Skating women (Professional)",
             active: false,
         },
+
         {
             id: 5,
             name: "Classic slalom senior man",
@@ -79,22 +80,22 @@ export const Nav = () => {
         },
         {
             id: 9,
-            name: "Fish speed junior man",
+            name: "Freestyle slide man ",
             active: false,
         },
         {
             id: 10,
-            name: "Fish speed junior woman",
+            name: "Freestyle slide woman ",
             active: false,
         },
         {
             id: 11,
-            name: "Fish speed senior man",
+            name: "Speed slalom junior woman",
             active: false,
         },
         {
             id: 12,
-            name: "Fish speed senior woman",
+            name: "Speed slalom junior man",
             active: false,
         },
         {
@@ -174,89 +175,75 @@ export const Nav = () => {
 
         switch (data.id) {
             case 1:
-                //
                 clickMenuTop(undefined);
                 navigate(`/ranking/${data.id}/${makeSlug(data.name)}`);
 
                 break;
 
             case 2:
-                //
                 clickMenuTop(undefined);
                 navigate(`/ranking/${data.id}/${makeSlug(data.name)}`);
 
                 break;
 
             case 3:
-                //
                 clickMenuTop(undefined);
                 navigate(`/ranking/${data.id}/${makeSlug(data.name)}`);
 
                 break;
 
             case 4:
-                //
                 clickMenuTop(undefined);
                 navigate(`/ranking/${data.id}/${makeSlug(data.name)}`);
 
                 break;
 
             case 5:
-                //
                 clickMenuTop(undefined);
                 navigate(`/ranking/${data.id}/${makeSlug(data.name)}`);
 
                 break;
             case 6:
-                //
                 clickMenuTop(undefined);
                 navigate(`/ranking/${data.id}/${makeSlug(data.name)}`);
 
                 break;
             case 7:
-                //
                 clickMenuTop(undefined);
                 navigate(`/ranking/${data.id}/${makeSlug(data.name)}`);
 
                 break;
             case 8:
-                //
                 clickMenuTop(undefined);
                 navigate(`/ranking/${data.id}/${makeSlug(data.name)}`);
 
                 break;
             case 9:
-                //
                 clickMenuTop(undefined);
                 navigate(`/ranking/${data.id}/${makeSlug(data.name)}`);
 
                 break;
             case 10:
-                //
                 clickMenuTop(undefined);
                 navigate(`/ranking/${data.id}/${makeSlug(data.name)}`);
 
                 break;
             case 11:
-                //
                 clickMenuTop(undefined);
                 navigate(`/ranking/${data.id}/${makeSlug(data.name)}`);
 
                 break;
             case 12:
-                //
                 clickMenuTop(undefined);
                 navigate(`/ranking/${data.id}/${makeSlug(data.name)}`);
 
                 break;
             case 13:
-                //
                 clickMenuTop(undefined);
                 navigate(`/ranking/${data.id}/${makeSlug(data.name)}`);
 
                 break;
             case 14:
-                //
                 clickMenuTop(undefined);
                 navigate(`/ranking/${data.id}/${makeSlug(data.name)}`);
 
@@ -286,21 +273,18 @@ export const Nav = () => {
         setCurrent(e.key);
         switch (e.key) {
             case "1":
-                //
                 clickMenuBottom(undefined);
                 navigate("/");
 
                 break;
 
             case "2":
-                //
                 clickMenuBottom(undefined);
                 navigate("/about")
 
                 break;
 
             case "3":
-                //
                 clickMenuBottom(undefined);
                 navigate("/events");
 
@@ -308,87 +292,35 @@ export const Nav = () => {
                 break;
 
             case "4":
-                //
                 clickMenuBottom(defaultMenuBottom[0]);
                 break;
 
             case "5":
-                //
                 clickMenuBottom(undefined);
                 navigate("/contact")
 
                 break;
 
-            case 'Speed-skating-man':
+            case "speed-skating-man":
+            case "speed-skating-women":
+            case "speed-skating-men-professional":
+            case "speed-skating-women-professional":
+            case "classic-slalom-senior-man":
+            case "classic-slalom-senior-woman":
+            case "classic-slalom-junior-man":
+            case "classic-slalom-junior-woman":
+            case "freestyle-slide-man":
+            case "freestyle-slide-woman":
+            case "speed-slalom-junior-woman":
+            case "speed-slalom-junior-man":
+            case "speed-slalom-senior-man":
+            case "speed-slalom-senior-woman":
                 clickMenuTop(undefined);
-                navigate(`/ranking/1/${e.key}`);
+                navigate(`/ranking/${menuMobie[3]["children"][0]["children"].findIndex(item => item.key === e.key) + 1}/${e.key}`);
                 break;
 
-            case 'Speed-skating-women':
-                clickMenuTop(undefined);
-                navigate(`/ranking/2/${e.key}`);
+            default:
                 break;
-
-            case 'Freestyle-slider-man':
-                clickMenuTop(undefined);
-                navigate(`/ranking/3/${e.key}`);
-                break;
-
-            case 'Freestyle-slider-woman':
-                clickMenuTop(undefined);
-                navigate(`/ranking/4/${e.key}`);
-                break;
-
-            case 'Classic-slalom-senior-man':
-                clickMenuTop(undefined);
-                navigate(`/ranking/5/${e.key}`);
-                break;
-
-            case 'Classic-slalom-senior-woman':
-                clickMenuTop(undefined);
-                navigate(`/ranking/6/${e.key}`);
-                break;
-
-            case 'Classic-slalom-junior-man':
-                clickMenuTop(undefined);
-                navigate(`/ranking/7/${e.key}`);
-                break;
-
-            case 'Classic-slalom-junior-woman':
-                clickMenuTop(undefined);
-                navigate(`/ranking/8/${e.key}`);
-                break;
-
-            case 'Fish-speed-junior-man':
-                clickMenuTop(undefined);
-                navigate(`/ranking/9/${e.key}`);
-                break;
-
-            case 'Fish-speed-junior-woman':
-                clickMenuTop(undefined);
-                navigate(`/ranking/10/${e.key}`);
-                break;
-
-            case 'Fish-speed-senior-man':
-                clickMenuTop(undefined);
-                navigate(`/ranking/11/${e.key}`);
-                break;
-
-            case 'Fish-speed-senior-woman':
-                clickMenuTop(undefined);
-                navigate(`/ranking/12/${e.key}`);
-                break;
-
-            case 'Speed-slalom-senior-man':
-                clickMenuTop(undefined);
-                navigate(`/ranking/13/${e.key}`);
-                break;
-
-            case 'Speed-slalom-senior-woman':
-                clickMenuTop(undefined);
-                navigate(`/ranking/14/${e.key}`);
-                break;
-
         }
     }
 
@@ -414,65 +346,62 @@ export const Nav = () => {
                     label: 'ranking',
                     children: [
                         {
+                            key: "speed-skating-man",
                             label: "Speed skating man",
-                            key: "Speed-skating-man",
                         },
                         {
+                            key: "speed-skating-women",
                             label: "Speed skating women",
-                            key: "Speed-skating-women",
                         },
                         {
-                            label: "Freestyle slider man",
-                            key: "Freestyle-slider-man",
+                            key: "speed-skating-men-professional",
+                            label: "Speed Skating men (Professional)",
                         },
                         {
-                            label: "Freestyle slider woman",
-                            key: "Freestyle-slider-woman",
+                            key: "speed-skating-women-professional",
+                            label: "Speed Skating women (Professional)",
                         },
                         {
+                            key: "classic-slalom-senior-man",
                             label: "Classic slalom senior man",
-                            key: "Classic-slalom-senior-man",
                         },
                         {
+                            key: "classic-slalom-senior-woman",
                             label: "Classic slalom senior woman",
-                            key: "Classic-slalom-senior-woman",
                         },
                         {
+                            key: "classic-slalom-junior-man",
                             label: "Classic slalom junior man",
-                            key: "Classic-slalom-junior-man",
                         },
                         {
+                            key: "classic-slalom-junior-woman",
                             label: "Classic slalom junior woman",
-                            key: "Classic-slalom-junior-woman",
                         },
                         {
-                            label: "Fish speed junior man",
-                            key: "Fish-speed-junior-man",
+                            key: "freestyle-slide-man",
+                            label: "Freestyle slide man",
                         },
                         {
-                            label: "Fish speed junior woman",
-                            key: "Fish-speed-junior-woman",
+                            key: "freestyle-slide-woman",
+                            label: "Freestyle slide woman",
                         },
                         {
-                            label: "Fish speed senior man",
-                            key: "Fish-speed-senior-man",
+                            key: "speed-slalom-junior-woman",
+                            label: "Speed slalom junior woman",
                         },
                         {
-                            label: "Fish speed senior woman",
-                            key: "Fish-speed-senior-woman",
+                            key: "speed-slalom-junior-man",
+                            label: "Speed slalom junior man",
                         },
                         {
+                            key: "speed-slalom-senior-man",
                             label: "Speed slalom senior man",
-                            key: "Speed-slalom-senior-man",
                         },
                         {
+                            key: "speed-slalom-senior-woman",
                             label: "Speed slalom senior woman",
-                            key: "Speed-slalom-senior-woman",
-                        }
-
-
-
-                    ],
+                        },
+                    ]
                 },
             ],
         },
