@@ -4,6 +4,7 @@ import { Ranking } from "../component/ranking/Ranking"
 import { Events } from "../component/Events"
 import { About } from "../component/about"
 import { Contact } from "../component/contact-us"
+import { NewDetail } from "../component/new-detail"
 
 
 
@@ -17,6 +18,8 @@ export const AppRouter = () => {
                 <Route path="/events" element={<Events />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/about" element={<About />} />
+                <Route path="/new-detail" element={<NewDetail />} />
+
 
 
             </Routes>

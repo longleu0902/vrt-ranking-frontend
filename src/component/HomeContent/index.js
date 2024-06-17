@@ -2,6 +2,7 @@ import "./styles.css";
 import { Row, Col, Flex } from "antd";
 import { CaretRightOutlined } from "@ant-design/icons";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const HomeContent = () => {
     const fakeData = [
@@ -45,7 +46,20 @@ export const HomeContent = () => {
             img: "https://www.worldskate.org/images/Marathon/medium/cover._articolo.png",
             category: "Category 5",
             date: "Date 5",
-            description: "Nam nec vulputate turpis. Proin eget suscipit justo. Ut lacinia elit vel turpis convallis efficitur. Duis id ex ullamcorper, accumsan odio vel, convallis ipsum."
+            description: `
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et
+            nulla aliquet, scelerisque massa at, fermentum nisl. Integer sit
+            amet ultrices felis. Curabitur ac leo at lorem lobortis dignissim.
+            Duis eget nisi non mi euismod ultricies. Vestibulum vehicula
+            turpis in justo posuere, id dignissim mi eleifend. Nam efficitur
+            quam a velit ultrices blandit. Quisque sed nulla ut libero
+            venenatis laoreet. Fusce in lorem vitae tellus condimentum
+            hendrerit. Aliquam volutpat sapien eget odio maximus, quis
+            consequat urna fermentum. Donec rhoncus mauris in ligula dapibus,
+            et pretium metus laoreet. Nulla facilisi. Phasellus congue risus
+            non odio ultrices, in egestas quam volutpat.
+        `,
+         
         },
         {
             id: 7,
@@ -77,12 +91,16 @@ export const HomeContent = () => {
         }
         // Thêm các mục dữ liệu khác nếu cần
     ];
+
+    const navigate = useNavigate()
     
     
       
 
   const [list, setList] = useState(fakeData);
-
+const hanldeClickItem = (data)=> {  
+    navigate("/new-detail" , {state : {...data}})
+}
   return (
     <div className="container-home">
       <div style={{ gap: "10px", display: "flex" }}>
@@ -95,7 +113,7 @@ export const HomeContent = () => {
           list.map((item, index) => {
             return (
               <Col key={index} xs={24} sm={12} md={8} lg={8} xl={8}>
-                <div className="home-item">
+                <div onClick={()=>hanldeClickItem(item)} className="home-item">
                   <img src={item?.img} />
                   <div className="item-description">
                     <div className="home-item-title">

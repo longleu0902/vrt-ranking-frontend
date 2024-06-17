@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import logo from "../../Image/logoteam.png"
 import './Banner.css'
-import { defaultSlider } from "../../Data";
+import { defaultSlider } from "../../Data/default-banner";
 export const Banner = () => {
   
     const [slider, setSlider] = useState(1);

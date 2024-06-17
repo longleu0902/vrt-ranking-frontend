@@ -1,0 +1,15 @@
+.events-title {
+    border: 1px;
+    border-style: solid;
+    padding: 6px 12px;
+    border-radius : 3px;
+}
+
+.post-title {
+    display: flex;
+    gap: 10px;
+}
+
+.post-desciption { 
+
+}

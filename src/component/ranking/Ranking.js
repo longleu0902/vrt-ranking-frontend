@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Checkbox, Modal } from "antd";
 import { UserOutlined } from "@ant-design/icons";
 import { LoginFrom } from "../login-form";
+
 export const Ranking = () => {
   const { slug, id } = useParams();
   const [modalLogin, setModalLogin] = useState(false);
