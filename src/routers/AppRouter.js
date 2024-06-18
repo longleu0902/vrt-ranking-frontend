@@ -4,25 +4,24 @@ import { Ranking } from "../component/ranking/Ranking"
 import { Events } from "../component/Events"
 import { About } from "../component/about"
 import { Contact } from "../component/contact-us"
-import { NewDetail } from "../component/new-detail"
+import { NewDetail } from "../component/news-detail";
 
 
 
 
 export const AppRouter = () => {
     return (
-        <>  
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/ranking/:id/:slug" element={<Ranking />} />
-                <Route path="/events" element={<Events />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/new-detail" element={<NewDetail />} />
-
-
-
-            </Routes>
-        </>
-    )
+      <>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/ranking/:id/:slug" element={<Ranking />} />
+          <Route path="/events" element={<Events />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/news-detail" element={<NewDetail />} />
+          <Route path="/events/news-detail" element={<NewDetail />} />
+          <Route path="/ranking/:id/:slug/news-detail" element={<NewDetail />} />
+        </Routes>
+      </>
+    );
 }

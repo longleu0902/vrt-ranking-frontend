@@ -57,6 +57,7 @@ const data = {...props.data}
     {
       key: "10",
       label: "Achievement",
+      span: 3,
       children: (
         <>
           <TimelineView  data = {data?.achievements} />

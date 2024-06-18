@@ -99,7 +99,7 @@ export const HomeContent = () => {
 
   const [list, setList] = useState(fakeData);
 const hanldeClickItem = (data)=> {  
-    navigate("/new-detail" , {state : {...data}})
+    navigate("/news-detail" , {state : {...data}})
 }
   return (
     <div className="container-home">

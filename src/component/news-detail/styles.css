@@ -1,9 +1,17 @@
+.container-news {
+    padding: 12px 12px;
+    text-align: start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .article-detail {
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 60%;
+    width: 70%;
 }
 
 .article-detail h2 {
