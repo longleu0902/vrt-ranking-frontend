@@ -69,6 +69,14 @@ export const ModelCreateUser = (props) => {
     return false;
   };
 
+  const validatePassword = (password, rePassword) => {
+    if (password !== rePassword) {
+      openNotification("topRight", "Mật khẩu nhập lại không đúng");
+      return false;
+    }
+    return true;
+  };
+
   const handleFormSubmit = () => {
     const form = {
       name,
@@ -91,12 +99,15 @@ export const ModelCreateUser = (props) => {
     };
 
     const check = validate(form);
-    if (check) {
+    const checkPassword = validatePassword(password , rePassword);
+    if (check == true && checkPassword == true) {
       resetFields();
       onClose();
       props.success();
     }
   };
+
+  
 
   return (
     <Context.Provider>
