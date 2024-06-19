@@ -1,30 +1,26 @@
 import { useParams } from "react-router-dom";
 import './Ranking.css';
 import { RankingDetail } from "../RankingDetail/RankingDetail";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Checkbox, Modal } from "antd";
 import { UserOutlined } from "@ant-design/icons";
 import { LoginFrom } from "../login-form";
+import { Tabs, ConfigProvider } from "antd";
+import { RankByAge } from "../../Data/default-ranking-tab";
 
 export const Ranking = () => {
   const { slug, id } = useParams();
   const [modalLogin, setModalLogin] = useState(false);
 
-  //check-box
-  const CheckboxGroup = Checkbox.Group;
-  const plainOptions = [" < 5", "6-7 ", "8-9", "10-11", "12-13", " >13"];
-  const [checkedList, setCheckedList] = useState([" < 5"]);
-  const checkAll = plainOptions.length === checkedList.length;
-  const indeterminate =
-    checkedList.length > 0 && checkedList.length < plainOptions.length;
-  const onChange = (list) => {
-    setCheckedList(list);
-  };
-  const onCheckAllChange = (e) => {
-    setCheckedList(e.target.checked ? plainOptions : []);
+  const [checkedList, setCheckedList] = useState([]);
+  const onChange = (key) => {
+    console.log(key);
+    setCheckedList([...key]);
   };
 
-  // console.log(checkedList);
+  useEffect(()=>{
+    onChange("1")
+  },[])
 
   return (
     <div className="container">
@@ -39,31 +35,27 @@ export const Ranking = () => {
       </div>
 
       {(id == 1 || id == 2 || id == 3 || id == 4) && (
-        <div className="check-box">
-          <Checkbox
-            className="custom-checkbox"
-            indeterminate={indeterminate}
-            onChange={onCheckAllChange}
-            checked={checkAll}
+        <div className="choose-age">
+          <ConfigProvider
+            theme={{
+              token: {
+                colorPrimary: "#000",
+                borderRadius: 2,
+                colorBgContainer: "#f6ffed",
+              },
+            }}
           >
-            ALL
-          </Checkbox>
-          <CheckboxGroup
-            className="custom-checkbox"
-            options={plainOptions}
-            value={checkedList}
-            onChange={onChange}
-          />
+            <Tabs defaultActiveKey="1" items={RankByAge} onChange={onChange} />
+          </ConfigProvider>
         </div>
       )}
 
-      {id == 1 || id == 2 || id == 3 || id == 4? (
+      {id == 1 || id == 2 || id == 3 || id == 4 ? (
         <>
           {checkedList &&
             checkedList.map((item, index) => {
               return (
                 <div key={index}>
-                  {index > 0 && <h2 className="age-box">Age {item}</h2>}
                   <RankingDetail />
                 </div>
               );
@@ -78,7 +70,7 @@ export const Ranking = () => {
         onCancel={() => setModalLogin(false)}
         footer={null}
         width="50%"
-        style={{textAlign:'center'}}
+        style={{ textAlign: "center" }}
       >
         <h2>LOGIN FORM</h2>
         <LoginFrom />

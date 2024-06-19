@@ -1,9 +1,26 @@
-import React from "react";
-import { Badge, Descriptions } from "antd";
+import React, { useState } from "react";
+import { Badge, Button, Descriptions } from "antd";
 import { TimelineView } from "../Timeline/Timeline";
+import { ProfilePLayer } from "../profile-player";
 export const InfoPlayer = (props) => {
+  // show profile
+  const [open, setOpen] = useState(false);
+  const showDrawer = () => {
+    setOpen(true);
+  };
+  const onClose = () => {
+    setOpen(false);
+  };
 
-const data = {...props.data}
+  /////////////////////////////
+
+  const moreProfile = () => {
+    props?.close(false);
+    showDrawer();
+  };
+
+
+  const data = { ...props.data };
   const items = [
     {
       key: "1",
@@ -60,15 +77,29 @@ const data = {...props.data}
       span: 3,
       children: (
         <>
-          <TimelineView  data = {data?.achievements} />
+          <TimelineView data={data?.achievements} />
         </>
       ),
     },
   ];
 
+
   return (
     <>
-      <Descriptions labelStyle={{fontWeight : 900}} bordered items={items} />;
+      <Descriptions labelStyle={{ fontWeight: 900 }} bordered items={items} />
+      <ProfilePLayer items={items} open={open} onClose={onClose} />
+      <Button
+        style={{
+          backgroundColor: "#000",
+          padding: "16px 0",
+          margin: "12px 0px",
+          width: "100%",
+        }}
+        onClick={moreProfile}
+        type="primary"
+      >
+        More Infomaiton
+      </Button>
     </>
   );
 };

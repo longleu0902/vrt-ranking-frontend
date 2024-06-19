@@ -212,7 +212,7 @@ export const HeaderHome = () => {
         footer={null}
         width="auto"
       >
-        <InfoPlayer data={dataInfo} />
+        <InfoPlayer close={setShowModel} data={dataInfo} />
       </Modal>
     </>
   );

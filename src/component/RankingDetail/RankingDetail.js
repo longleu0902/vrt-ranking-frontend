@@ -409,25 +409,24 @@ export const RankingDetail = (props) => {
           <p className="point">Point</p>
           <p className="rank">Rank</p>
         </div>
-        {list.map((item, index) => {
+        {list.map((item, index ) => {
           const defaultBackGround = (index) => {
             if (index % 2 == 0) {
-              return "#fcf9f9"
+              return "#fcf9f9";
             }
-          }
-
+          };
 
           const topRankingIcon = (index) => {
             if (index == 0) {
-              return no1
+              return no1;
             }
             if (index == 1) {
-              return no2
+              return no2;
             }
             if (index == 2) {
-              return no3
+              return no3;
             }
-          }
+          };
           return (
             <div
               key={index}
@@ -435,7 +434,10 @@ export const RankingDetail = (props) => {
               ref={keyWord === item.id ? itemRef : null}
               className="item-ranking"
               style={{
-                backgroundColor: keyWord == item.id ? "rgb(249, 106, 106)" : defaultBackGround(index),
+                backgroundColor:
+                  keyWord == item.id
+                    ? "rgb(249, 106, 106)"
+                    : defaultBackGround(index),
               }}
             >
               <div style={{ padding: "0 6px" }} className="search">
@@ -479,10 +481,11 @@ export const RankingDetail = (props) => {
                 }}
                 className="rank"
               >
-
                 {index < 3 ? (
-                  <img className="top-ranking-icon" src={topRankingIcon(index)} />
-
+                  <img
+                    className="top-ranking-icon"
+                    src={topRankingIcon(index)}
+                  />
                 ) : (
                   item?.rank
                 )}
@@ -499,7 +502,7 @@ export const RankingDetail = (props) => {
         footer={null}
         width="auto"
       >
-        <InfoPlayer data={dataInfo} />
+        <InfoPlayer close={setModalInfo} data={dataInfo} />
       </Modal>
     </>
   );
