@@ -12,336 +12,7 @@ import { UserOutlined } from "@ant-design/icons";
 import { InfoPlayer } from "../info-player";
 
 export const RankingDetail = (props) => {
-  const fakeData = [
-    {
-      id: uid().slice(0, 4),
-      name: "Hoang Huy Hieu",
-      tean: "Roller Team abc Thanh",
-      age: "20",
-      gender: "Men",
-      avatar: "",
-      logoTeam: logo,
-      exams: "2",
-      category: "Classic freestyle slalom",
-      point: 1500,
-      rank: 1,
-      achievements: [
-        { id: 1, date: "01/01/2023", achievement: "Đoạt Huy chương Vàng Olympic" },
-        { id: 2, date: "02/02/2023", achievement: "Vô địch Giải Grand Slam" },
-        { id: 3, date: "03/03/2023", achievement: "Lập kỷ lục thế giới" },
-        { id: 4, date: "04/04/2023", achievement: "Đoạt Huy chương Vàng Thế vận hội" },
-        { id: 5, date: "05/05/2023", achievement: "Đạt giải Cầu thủ xuất sắc nhất năm" },
-      ]
-    },
-    {
-      id: uid().slice(0, 4),
-      name: "Hoang Huy Hieu",
-      tean: "Roller Team Binh Thanh",
-      age: "20",
-      avatar: "",
-      logoTeam: logo,
-      exams: "2",
-      point: 1500,
-      rank: 1,
-    },
-    {
-      id: uid().slice(0, 4),
-      name: "Hoang Huy Hieu",
-      tean: "Roller Team Binh Thanh",
-      age: "20",
-      avatar: "",
-      logoTeam: logo,
-      exams: "2",
-      point: 1500,
-      rank: 1,
-    },
-
-    {
-      id: uid().slice(0, 4),
-      name: "Hoang Huy Hieu",
-      tean: "Roller Team Binh Thanh",
-      age: "20",
-      avatar: "",
-      logoTeam: logo,
-      exams: "2",
-      point: 1500,
-      rank: 1,
-    },
-
-    {
-      id: uid().slice(0, 4),
-      name: "Hoang Huy Hieu",
-      tean: "Roller Team Binh Thanh",
-      age: "20",
-      avatar: logo,
-      logoTeam: logo,
-      exams: "2",
-      point: 1500,
-      rank: 1,
-    },
-
-    {
-      id: uid().slice(0, 4),
-      name: "Hoang Huy Hieu",
-      tean: "Roller Team Binh Thanh",
-      age: "20",
-      avatar: logo,
-      logoTeam: logo,
-      exams: "2",
-      point: 1500,
-      rank: 1,
-    },
-
-    {
-      id: uid().slice(0, 4),
-      name: "Hoang Huy Hieu",
-      tean: "Roller Team Binh Thanh",
-      age: "20",
-      avatar: logo,
-      logoTeam: logo,
-      exams: "2",
-      point: 1500,
-      rank: 1,
-    },
-
-    {
-      id: uid().slice(0, 4),
-      name: "Hoang Huy Hieu",
-      tean: "Roller Team Binh Thanh",
-      age: "20",
-      avatar: logo,
-      logoTeam: logo,
-      exams: "2",
-      point: 1500,
-      rank: 1,
-    },
-
-    {
-      id: uid().slice(0, 4),
-      name: "Hoang Huy Hieu",
-      tean: "Roller Team Binh Thanh",
-      age: "20",
-      avatar: logo,
-      logoTeam: logo,
-      exams: "2",
-      point: 1500,
-      rank: 1,
-    },
-
-    {
-      id: uid().slice(0, 4),
-      name: "Hoang Huy Hieu",
-      tean: "Roller Team Binh Thanh",
-      age: "20",
-      avatar: logo,
-      logoTeam: logo,
-      exams: "2",
-      point: 1500,
-      rank: 1,
-    },
-
-    {
-      id: uid().slice(0, 4),
-      name: "Hoang Huy Hieu",
-      tean: "Roller Team Binh Thanh",
-      age: "20",
-      avatar: logo,
-      logoTeam: logo,
-      exams: "2",
-      point: 1500,
-      rank: 1,
-    },
-
-    {
-      id: uid().slice(0, 4),
-      name: "Hoang Huy Hieu",
-      tean: "Roller Team Binh Thanh",
-      age: "20",
-      avatar: logo,
-      logoTeam: logo,
-      exams: "2",
-      point: 1500,
-      rank: 1,
-    },
-    {
-      id: uid().slice(0, 4),
-      name: "Hoang Huy Hieu",
-      tean: "Roller Team Binh Thanh",
-      age: "20",
-      avatar: logo,
-      logoTeam: logo,
-      exams: "2",
-      point: 1500,
-      rank: 1,
-    },
-    {
-      id: uid().slice(0, 4),
-      name: "Hoang Huy Hieu",
-      tean: "Roller Team Binh Thanh",
-      age: "20",
-      avatar: logo,
-      logoTeam: logo,
-      exams: "2",
-      point: 1500,
-      rank: 1,
-    },
-    {
-      id: uid().slice(0, 4),
-      name: "Hoang Huy Hieu",
-      tean: "Roller Team Binh Thanh",
-      age: "20",
-      avatar: logo,
-      logoTeam: logo,
-      exams: "2",
-      point: 1500,
-      rank: 1,
-    },
-    {
-      id: uid().slice(0, 4),
-      name: "Hoang Huy Hieu",
-      tean: "Roller Team Binh Thanh",
-      age: "20",
-      avatar: logo,
-      logoTeam: logo,
-      exams: "2",
-      point: 1500,
-      rank: 1,
-    },
-    {
-      id: uid().slice(0, 4),
-      name: "Hoang Huy Hieu",
-      tean: "Roller Team Binh Thanh",
-      age: "20",
-      avatar: logo,
-      logoTeam: logo,
-      exams: "2",
-      point: 1500,
-      rank: 1,
-    },
-    {
-      id: "gggg",
-      name: "Hoang Huy Hieu",
-      tean: "Roller Team Binh Thanh",
-      age: "20",
-      avatar: logo,
-      logoTeam: logo,
-      exams: "2",
-      point: 1500,
-      rank: 1,
-    },
-    {
-      id: uid().slice(0, 4),
-      name: "Hoang Huy Hieu",
-      tean: "Roller Team Binh Thanh",
-      age: "20",
-      avatar: logo,
-      logoTeam: logo,
-      exams: "2",
-      point: 1500,
-      rank: 1,
-    },
-    {
-      id: uid().slice(0, 4),
-      name: "Hoang Huy Hieu",
-      tean: "Roller Team Binh Thanh",
-      age: "20",
-      avatar: logo,
-      logoTeam: logo,
-      exams: "2",
-      point: 1500,
-      rank: 1,
-    },
-    {
-      id: uid().slice(0, 4),
-      name: "Hoang Huy Hieu",
-      tean: "Roller Team Binh Thanh",
-      age: "20",
-      avatar: logo,
-      logoTeam: logo,
-      exams: "2",
-      point: 1500,
-      rank: 1,
-    },
-    {
-      id: uid().slice(0, 4),
-      name: "Hoang Huy Hieu",
-      tean: "Roller Team Binh Thanh",
-      age: "20",
-      avatar: logo,
-      logoTeam: logo,
-      exams: "2",
-      point: 1500,
-      rank: 1,
-    },
-    {
-      id: uid().slice(0, 4),
-      name: "Hoang Huy Hieu",
-      tean: "Roller Team Binh Thanh",
-      age: "20",
-      avatar: logo,
-      logoTeam: logo,
-      exams: "2",
-      point: 1500,
-      rank: 1,
-    },
-    {
-      id: uid().slice(0, 4),
-      name: "Hoang Huy Hieu",
-      tean: "Roller Team Binh Thanh",
-      age: "20",
-      avatar: logo,
-      logoTeam: logo,
-      exams: "2",
-      point: 1500,
-      rank: 1,
-    },
-    {
-      id: uid().slice(0, 4),
-      name: "Hoang Huy Hieu",
-      tean: "Roller Team Binh Thanh",
-      age: "20",
-      avatar: logo,
-      logoTeam: logo,
-      exams: "2",
-      point: 1500,
-      rank: 1,
-    },
-    {
-      id: uid().slice(0, 4),
-      name: "Hoang Huy Hieu",
-      tean: "Roller Team Binh Thanh",
-      age: "20",
-      avatar: logo,
-      logoTeam: logo,
-      exams: "2",
-      point: 1500,
-      rank: 1,
-    },
-    {
-      id: uid().slice(0, 4),
-      name: "Hoang Huy Hieu",
-      tean: "Roller Team Binh Thanh",
-      age: "20",
-      avatar: logo,
-      logoTeam: logo,
-      exams: "2",
-      point: 1500,
-      rank: 1,
-    },
-    {
-      id: uid().slice(0, 4),
-      name: "Hoang Huy Hieu",
-      tean: "Roller Team Binh Thanh",
-      age: "20",
-      avatar: logo,
-      logoTeam: logo,
-      exams: "2",
-      point: 1500,
-      rank: 1,
-    },
-  ];
-
-  const [list, setList] = useState(fakeData);
+  const { list } = props;
   const [keyWord, setKeyWord] = useState("");
   const itemRef = useRef(null);
   const [modalInfo, setModalInfo] = useState(false);
@@ -399,17 +70,23 @@ export const RankingDetail = (props) => {
               />
             </div>
           </div>
-          {/* <p className="change">Id</p> */}
-          <p style={{ alignItems: "center" }} className="name">
+          <p
+            style={{ alignItems: "center", justifyContent: "center" }}
+            className="name"
+          >
             Name
           </p>
-          <p className="team">Team</p>
+          <p
+            style={{ textAlign: "center", justifyContent: "center" }}
+            className="team"
+          >
+            Team
+          </p>
           <p className="age">Age</p>
-          <p className="exam">Exams</p>
           <p className="point">Point</p>
           <p className="rank">Rank</p>
         </div>
-        {list.map((item, index ) => {
+        {list.map((item, index) => {
           const defaultBackGround = (index) => {
             if (index % 2 == 0) {
               return "#fcf9f9";
@@ -443,10 +120,9 @@ export const RankingDetail = (props) => {
               <div style={{ padding: "0 6px" }} className="search">
                 {item.id}
               </div>
-              {/* <p className="change">{item.id}</p> */}
-              <div className="name">
+              <div style={{ padding: "0 24px" }} className="name">
                 <div className="avatar-name">
-                  {item.avatar ? (
+                  {item.avatar !== null ? (
                     <img
                       style={{ width: 30, height: 30 }}
                       className="logo"
@@ -459,19 +135,22 @@ export const RankingDetail = (props) => {
                 </div>
                 <p>{item?.name}</p>
               </div>
-              <div className="team">
+              <div style={{ padding: "0 24px" }} className="team">
                 <div className="avatar-team">
-                  <img
-                    style={{ width: 30, height: 30 }}
-                    className="logo"
-                    src={item?.logoTeam}
-                    alt="Logo"
-                  />
+                  {item.logoTeam !== null ? (
+                    <img
+                      style={{ width: 30, height: 30 }}
+                      className="logo"
+                      src={item?.logoTeam}
+                      alt="Logo"
+                    />
+                  ) : (
+                    <Avatar size="large" icon={<UserOutlined />} />
+                  )}
                 </div>
-                <p>{item?.tean}</p>
+                <p>{item?.team}</p>
               </div>
               <p className="age">{item?.age}</p>
-              <p className="exam">{item?.exams}</p>
               <p className="point">{item?.point}</p>
               <p
                 style={{

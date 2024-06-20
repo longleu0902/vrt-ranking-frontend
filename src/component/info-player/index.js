@@ -62,7 +62,7 @@ export const InfoPlayer = (props) => {
     {
       key: "5",
       label: "Team",
-      children: data?.tean,
+      children: data?.team,
       span: 2,
     },
     {

@@ -29,16 +29,11 @@
 
 }
 
-.change {
-    width: 10%;
-
-}
 
 .name {
     display: flex;
-    width: 20%;
+    width: 30%;
     gap: 20px;
-    justify-content: center;
 
 }
 
@@ -51,7 +46,6 @@
     display: flex;
     width: 30%;
     gap: 20px;
-    justify-content: center;
 
 }
 
@@ -60,9 +54,6 @@
 
 }
 
-.exam {
-    width: 5%;
-}
 
 .point {
     width: 20%;

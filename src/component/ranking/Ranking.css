@@ -43,5 +43,14 @@
   }
 
 
+  @media (min-width:0px) and (max-width:695px) {}
+
+  @media (min-width:696px) and (max-width:1023px) {}
+
+  @media (min-width:1024px) {
+      .container {
+          margin: 0 50px;
+      }
+  }
 
 

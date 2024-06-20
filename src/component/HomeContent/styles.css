@@ -61,4 +61,7 @@
 .text-desciption {
     font-size: 10px;
     color: #fff;
+    height: 50px;
+    overflow: hidden;
 }
+

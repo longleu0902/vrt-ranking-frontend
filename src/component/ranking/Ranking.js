@@ -7,20 +7,44 @@ import { UserOutlined } from "@ant-design/icons";
 import { LoginFrom } from "../login-form";
 import { Tabs, ConfigProvider } from "antd";
 import { RankByAge } from "../../Data/default-ranking-tab";
+import { useDispatch, useSelector } from "react-redux";
+import { setListRanking } from "../../Redux/data-ranking-reducer";
 
 export const Ranking = () => {
+  const dispatch = useDispatch();
+  const listRankingStore = useSelector((state) => state.dataRanking.list);
+  const [list, setList] = useState([]);
   const { slug, id } = useParams();
+
+  const getData = () => {
+    if (id == 1) {
+      setList(listRankingStore);
+      return;
+    }
+    if (id == 2) {
+      setList([]);
+      return;
+    }
+
+    // more id
+  };
+
+  useEffect(() => {
+    getData();
+  }, [id]);
+
+  
   const [modalLogin, setModalLogin] = useState(false);
 
   const [checkedList, setCheckedList] = useState([]);
   const onChange = (key) => {
     console.log(key);
     setCheckedList([...key]);
-  };
+  };  
 
-  useEffect(()=>{
-    onChange("1")
-  },[])
+  useEffect(() => {
+    onChange("1");
+  }, []);
 
   return (
     <div className="container">
@@ -56,13 +80,13 @@ export const Ranking = () => {
             checkedList.map((item, index) => {
               return (
                 <div key={index}>
-                  <RankingDetail />
+                  <RankingDetail list={list} />
                 </div>
               );
             })}
         </>
       ) : (
-        <RankingDetail />
+        <RankingDetail list={list} />
       )}
       <Modal
         centered
