@@ -21,6 +21,7 @@ export const InfoPlayer = (props) => {
 
 
   const data = { ...props.data };
+
   const items = [
     {
       key: "1",
@@ -43,13 +44,13 @@ export const InfoPlayer = (props) => {
       children: data?.name,
     },
     {
-      key: "9",
+      key: "5",
       label: "Gender",
       children: data?.gender,
     },
 
     {
-      key: "8",
+      key: "6",
       label: "Category",
       children: data?.category,
     },
@@ -60,13 +61,13 @@ export const InfoPlayer = (props) => {
     },
 
     {
-      key: "5",
+      key: "8",
       label: "Team",
       children: data?.team,
       span: 2,
     },
     {
-      key: "6",
+      key: "9",
       label: "Status",
       children: <Badge status="processing" text="Running" />,
       span: 3,
@@ -87,7 +88,7 @@ export const InfoPlayer = (props) => {
   return (
     <>
       <Descriptions labelStyle={{ fontWeight: 900 }} bordered items={items} />
-      <ProfilePLayer items={items} open={open} onClose={onClose} />
+      <ProfilePLayer data={data} open={open} onClose={onClose} />
       <Button
         style={{
           backgroundColor: "#000",

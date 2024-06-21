@@ -3,9 +3,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* --tw-bg-opacity: 1;
-    background-color: rgb(67 69 88 / var(--tw-bg-opacity)); */
     padding: 24px 0px;
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../Image/logoteam.png"); */
+    background-size: cover;
+    height: 250px;
+ 
+}
+.container-home-search {
+    padding: 12px 12px;
+    text-align: start;
 }
 
 .Search-btn {
@@ -18,7 +24,7 @@
     justify-content: space-between;
     background-color: #fff;
     position: relative;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 2.1), 0 8px 16px rgba(0, 0, 0, 0.4);
 
 }
 
@@ -64,7 +70,9 @@
 
     .search-home {
         width: 100%;
-        display: block;
+        justify-content: center;
+        align-items: center;
+        display: flex;
     }
 
 

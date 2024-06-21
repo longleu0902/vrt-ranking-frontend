@@ -14,7 +14,7 @@ export const HomeContent = () => {
   };
   return (
     <div className="container-home">
-      <div style={{ gap: "10px", display: "flex" }}>
+      <div style={{ gap: "10px", display: "flex" , color :"#fff" }}>
         <span style={{ fontWeight: 800 }}>Home</span>
         <CaretRightOutlined />
         <span>News</span>

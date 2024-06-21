@@ -7,10 +7,10 @@ import {
 } from "@ant-design/icons";
 import "./styles.css";
 import { TimelineView } from "../Timeline/Timeline";
-
+import { useEffect, useState } from "react";
 
 export const ProfilePLayer = (props) => {
-  const { onClose, open, items } = props;
+  const { onClose, open, data } = props;
 
   const achievements = [
     { id: 1, date: "01/01/2023", achievement: "Đoạt Huy chương Vàng Olympic" },
@@ -27,33 +27,26 @@ export const ProfilePLayer = (props) => {
       achievement: "Đạt giải Cầu thủ xuất sắc nhất năm",
     },
   ];
-
-  console.log("check item", items);
   return (
     <Drawer
       width={640}
       placement="right"
-      closable={false}
+      closable={true}
       onClose={onClose}
       open={open}
     >
-      <header>
-        <button className="btn-close-profile" onClick={onClose}>
-          X
-        </button>
-      </header>
       <div className="container-profile-player">
         <Row gutter={24}>
           <Col xs={24} sm={24} md={9} lg={9} xl={9}>
             <div className="item-profile-player-left">
               <div className="img-profile">
-                {items.avatar == null ? (
+                {data?.avatar == null ? (
                   <Avatar
-                  style={{width:"100%", height:"100%"}}
+                    style={{ width: "100%", height: "100%" }}
                     src={`https://api.dicebear.com/7.x/miniavs/svg?seed=1`}
                   />
                 ) : (
-                  <img src={items?.avatar} />
+                  <img src={data?.avatar} />
                 )}
               </div>
               <div className="contact-profile">
@@ -114,7 +107,7 @@ export const ProfilePLayer = (props) => {
           <Col xs={24} sm={24} md={15} lg={15} xl={15}>
             <div className="item-profile-player-right">
               <div>
-                <h1>{items?.name}</h1>
+                <h1>{data?.name}</h1>
                 <span>Vận động viên</span>
               </div>
 
@@ -156,7 +149,7 @@ export const ProfilePLayer = (props) => {
                     <p>Founding : </p>
                   </Col>
                   <Col span={17}>
-                    <p>{items?.team ? items?.team : "nothing"}</p>
+                    <p>{data?.team ? data?.team : "nothing"}</p>
                     <p>11/11/2020</p>
                   </Col>
                 </Row>

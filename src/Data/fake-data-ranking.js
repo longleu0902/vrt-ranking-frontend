@@ -3,7 +3,7 @@ import avatar from "../Image/logoteam.png"
 export const fakeData = [
     {
       id: "bce4",
-      name: "Nguyen Van Abcxyzs",
+      name: "Hoang Huy Hieu",
       team: "Team XYZ",
       age: "25",
       gender: "Men",
@@ -28,7 +28,7 @@ export const fakeData = [
     },
     {
       id: "7f2c",
-      name: "Tran Thi B",
+      name: "Pham Hai Son",
       team: "Team ABC",
       age: "22",
       gender: "Women",

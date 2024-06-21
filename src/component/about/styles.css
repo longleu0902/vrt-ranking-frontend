@@ -1,5 +1,4 @@
-.home-container {
-
+.background-about {
     /* The image used */
     background-image: linear-gradient(rgba(0, 0, 0, 0.208), rgba(0, 0, 0, 0.244)), url("../../Image/logoteam.png");
 
@@ -11,4 +10,21 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.img-about {
+    width: 100%;
+    height: 100%;
+}
+
+.text-about {
+    width: 100%;
+    height: 100%;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font: 12px "Lato", sans-serif;
+    color: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
