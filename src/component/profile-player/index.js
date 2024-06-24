@@ -28,7 +28,7 @@ export const ProfilePLayer = (props) => {
     },
   ];
   return (
-    <Drawer
+    <Drawer 
       width={640}
       placement="right"
       closable={true}
@@ -86,9 +86,11 @@ export const ProfilePLayer = (props) => {
                     border: "none",
                   }}
                 />
-                <p>- Slalom</p>
-                <p>- Speed slalom</p>
-                <p>- Speed skating</p>
+                <ul style={{ padding: "2px 12px" }}>
+                  <li>Slalom</li>
+                  <li>Speed slalom</li>
+                  <li>Speed skating</li>
+                </ul>
               </div>
 
               <div className="skill-profile">
@@ -100,7 +102,9 @@ export const ProfilePLayer = (props) => {
                     border: "none",
                   }}
                 />
-                <p>- Đọc sách</p>
+                <ul style={{ padding: "2px 12px" }}>
+                  <li>Đọc sách</li>
+                </ul>
               </div>
             </div>
           </Col>

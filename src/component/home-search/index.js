@@ -34,6 +34,7 @@ export const HomeSearch = () => {
     console.log("check data search", data);
     setDataModal(data)
     showDrawer(); 
+    setKeyWord("");
   };
   useEffect(() => {
     filterList();
@@ -51,6 +52,7 @@ export const HomeSearch = () => {
             onChange={(e) => setKeyWord(e.target.value)}
             className="Search-input"
             placeholder="Seach ID or Name"
+            value={keyWord}
           />
           <div className="line-search"></div>
           <SearchOutlined />
