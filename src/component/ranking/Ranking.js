@@ -13,14 +13,44 @@ import { setListRanking } from "../../Redux/data-ranking-reducer";
 export const Ranking = () => {
   const dispatch = useDispatch();
   const listRankingStore = useSelector((state) => state.dataRanking.list);
+  const [checkedList, setCheckedList] = useState([]);
   const [list, setList] = useState([]);
   const { slug, id } = useParams();
 
   const getData = () => {
+
+    // Get data speed skating man
     if (id == 1) {
-      setList(listRankingStore);
-      return;
+      if (checkedList == "1") {
+        console.log("check")
+        setList(listRankingStore);
+        return;
       }
+      if (checkedList == "2") {
+        setList([]);
+        return;
+      }
+      if (checkedList == "3") {
+        setList(listRankingStore);
+        return;
+      }
+      if (checkedList == "4") {
+        setList([]);
+        return;
+      }
+      if (checkedList == "5") {
+        setList(listRankingStore);
+        return;
+      }
+      if (checkedList == "6") {
+        setList([]);
+        return;
+      }
+
+    }
+
+    // get data speed skating women
+
     if (id == 2) {
       setList([]);
       return;
@@ -31,16 +61,17 @@ export const Ranking = () => {
 
   useEffect(() => {
     getData();
-  }, [id]);
+  }, [id , checkedList]);
 
-  
+
   const [modalLogin, setModalLogin] = useState(false);
 
-  const [checkedList, setCheckedList] = useState([]);
   const onChange = (key) => {
-    console.log(key);
+
+    console.log("check age",typeof key)
     setCheckedList([...key]);
-  };  
+  };
+
 
   useEffect(() => {
     onChange("1");
