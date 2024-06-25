@@ -20,7 +20,7 @@ export const Ranking = () => {
     if (id == 1) {
       setList(listRankingStore);
       return;
-    }
+      }
     if (id == 2) {
       setList([]);
       return;

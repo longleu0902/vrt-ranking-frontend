@@ -12,7 +12,7 @@ export const HomeSearch = () => {
   const [list, setList] = useState([]);
   const filterList = () => {
     const _list = _.cloneDeep(listRanking);
-    if(keyWord.length < 0) return;
+    if(keyWord.length <= 0) return;
     const keyWordByList = _list.filter(
       (item) =>
         item.id.includes(keyWord.toLowerCase()) ||

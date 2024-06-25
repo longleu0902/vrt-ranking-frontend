@@ -1,125 +1,113 @@
-import { Col, Row } from "antd";
 import "./styles.css";
+import { RightOutlined, LeftOutlined } from "@ant-design/icons";
+import about1 from "../../Image/about1.jpg";
+import about2 from "../../Image/about2.jpg";
+import about3 from "../../Image/about3.jpg";
+import about4 from "../../Image/about4.jpg";
+import about5 from "../../Image/about5.jpg";
 
 export const About = () => {
+  const nextslide = () => {
+    let items = document.querySelectorAll(".item-about");
+    document.querySelector(".slide-about").appendChild(items[0]);
+  };
+
+  const prevslide = () => {
+    let items = document.querySelectorAll(".item-about");
+    document.querySelector(".slide-about").prepend(items[items.length - 1]);
+  };
   return (
-    <div className="background-about">
-      <Row gutter={24}>
-        <Col
-          xs={{ span: 24 }}
-          lg={{ span: 12 }}
-          style={{ height: 400, backgroundColor: "#fff", padding: "0px 0px" }}
-        >
-          <img
-            className="img-about"
-            src="https://static.wixstatic.com/media/267ff0_74350d4fe973466a889fb7ee4c997bc0~mv2.jpg/v1/fill/w_740,h_404,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/267ff0_74350d4fe973466a889fb7ee4c997bc0~mv2.jpg"
-            alt="First image"
-          />
-        </Col>
-        <Col
-          xs={{ span: 24 }}
-          lg={{ span: 12 }}
-          style={{ height: 400, backgroundColor: "#ffe5cd" }}
-        >
-          <div className="text-about">
-            <p className="text-about">
-              Việc kiên trì là vô cùng quan trọng khi nói đến việc huấn luyện và
-              thể thao. Các buổi tập đều đặn, dinh dưỡng đúng cách và giấc ngủ
-              đủ là những thành phần quan trọng giúp cơ thể của bạn thích ứng,
-              trở nên mạnh mẽ và hoạt động tốt nhất. Đặt ra mục tiêu cụ thể và
-              theo dõi tiến triển của mình cũng giúp bạn duy trì động lực và
-              trên con đường tiến tới thành công.
-            </p>
+    <div className="about">
+      <div className="container-about">
+        <div className="slide-about">
+          <div
+            className="item-about"
+            style={{
+              backgroundImage: `url(${about2})`,
+            }}
+          >
+            <div className="content-about">
+              {/*  content-about */}
+              <div className="name-about">Viet Nam Roller Team</div>
+              <div className="des-about">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab,
+                eum!
+              </div>
+            </div>
           </div>
-        </Col>
-      </Row>
-      <Row gutter={24}>
-        <Col
-          xs={{ span: 24 }}
-          lg={{ span: 12, order: 2 }}
-          style={{ height: 400, padding: "0px 0px" }}
-        >
-          <img
-            className="img-about"
-            src="https://static.wixstatic.com/media/267ff0_9eb64ba371ab47c4af7db409a0df7075~mv2.jpg/v1/fill/w_740,h_404,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/267ff0_9eb64ba371ab47c4af7db409a0df7075~mv2.jpg"
-            alt="Second image"
-          />
-        </Col>
-        <Col
-          xs={{ span: 24 }}
-          lg={{ span: 12, order: 1 }}
-          style={{ height: 400, backgroundColor: "#ffe5cd" }}
-        >
-          <div className="text-about">
-            <p className="text-about">
-              Việc kiên trì là vô cùng quan trọng khi nói đến việc huấn luyện và
-              thể thao. Các buổi tập đều đặn, dinh dưỡng đúng cách và giấc ngủ
-              đủ là những thành phần quan trọng giúp cơ thể của bạn thích ứng,
-              trở nên mạnh mẽ và hoạt động tốt nhất. Đặt ra mục tiêu cụ thể và
-              theo dõi tiến triển của mình cũng giúp bạn duy trì động lực và
-              trên con đường tiến tới thành công.
-            </p>
+          {/* Repeat other item-abouts similarly */}
+          <div
+            className="item-about"
+            style={{
+              backgroundImage: `url(${about3})`,
+            }}
+          >
+            <div className="content-about">
+              {/*  content-about */}
+              <div className="name-about">Viet Nam Roller Team</div>
+              <div className="des-about">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab,
+                eum!
+              </div>
+            </div>
           </div>
-        </Col>
-      </Row>
-      <Row gutter={24}>
-        <Col
-          xs={{ span: 24 }}
-          lg={{ span: 12 }}
-          style={{ height: 400, padding: "0px 0px" }}
-        >
-          <img
-            className="img-about"
-            src="https://static.wixstatic.com/media/267ff0_f4836554dff8452c9300968f6fd4c9da~mv2.jpg/v1/fill/w_740,h_493,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/267ff0_f4836554dff8452c9300968f6fd4c9da~mv2.jpg"
-            alt="Third image"
-          />
-        </Col>
-        <Col
-          xs={{ span: 24 }}
-          lg={{ span: 12 }}
-          style={{ height: 400, backgroundColor: "#ffe5cd" }}
-        >
-          <div className="text-about">
-            <p className="text-about">
-              Việc kiên trì là vô cùng quan trọng khi nói đến việc huấn luyện và
-              thể thao. Các buổi tập đều đặn, dinh dưỡng đúng cách và giấc ngủ
-              đủ là những thành phần quan trọng giúp cơ thể của bạn thích ứng,
-              trở nên mạnh mẽ và hoạt động tốt nhất. Đặt ra mục tiêu cụ thể và
-              theo dõi tiến triển của mình cũng giúp bạn duy trì động lực và
-              trên con đường tiến tới thành công.
-            </p>
+          <div
+            className="item-about"
+            style={{
+              backgroundImage: `url(${about4})`,
+            }}
+          >
+            <div className="content-about">
+              {/*  content-about */}
+              <div className="name-about">Viet Nam Roller Team</div>
+              <div className="des-about">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab,
+                eum!
+              </div>
+            </div>
           </div>
-        </Col>
-      </Row>
-      <Row gutter={24}>
-        <Col
-          xs={{ span: 24 }}
-          lg={{ span: 12, order: 2 }}
-          style={{ height: 400, padding: "0px 0px" }}
-        >
-          <img
-            className="img-about"
-            src="https://static.wixstatic.com/media/267ff0_9eb64ba371ab47c4af7db409a0df7075~mv2.jpg/v1/fill/w_740,h_404,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/267ff0_9eb64ba371ab47c4af7db409a0df7075~mv2.jpg"
-            alt="Second image"
-          />
-        </Col>
-        <Col
-          xs={{ span: 24 }}
-          lg={{ span: 12, order: 1 }}
-          style={{ height: 400, backgroundColor: "#ffe5cd" }}
-        >
-          <div className="text-about">
-            <p className="text-about">
-              Việc kiên trì là vô cùng quan trọng khi nói đến việc huấn luyện và
-              thể thao. Các buổi tập đều đặn, dinh dưỡng đúng cách và giấc ngủ
-              đủ là những thành phần quan trọng giúp cơ thể của bạn thích ứng,
-              trở nên mạnh mẽ và hoạt động tốt nhất. Đặt ra mục tiêu cụ thể và
-              theo dõi tiến triển của mình cũng giúp bạn duy trì động lực và
-              trên con đường tiến tới thành công.
-            </p>
+
+          <div
+            className="item-about"
+            style={{
+              backgroundImage: `url(${about1})`,
+            }}
+          >
+            <div className="content-about">
+              {/*  content-about */}
+              <div className="name-about">Viet Nam Roller Team</div>
+              <div className="des-about">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab,
+                eum!
+              </div>
+            </div>
           </div>
-        </Col>
-      </Row>
+          <div
+            className="item-about"
+            style={{
+              backgroundImage: `url(${about5})`,
+            }}
+          >
+            <div className="content-about">
+              {/*  content-about */}
+              <div className="name-about">Viet Nam Roller Team</div>
+              <div className="des-about">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab,
+                eum!
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="button-about">
+          <button className="prev" onClick={prevslide}>
+            <LeftOutlined />
+          </button>
+          <button className="next" onClick={nextslide}>
+            <RightOutlined />
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
