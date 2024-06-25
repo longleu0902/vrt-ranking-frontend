@@ -49,6 +49,7 @@ export const Ranking = () => {
 
     // more id
   };
+}
 
   useEffect(() => {
     getData();
