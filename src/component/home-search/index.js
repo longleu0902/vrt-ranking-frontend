@@ -14,6 +14,7 @@ export const HomeSearch = () => {
   const filterList = () => {
     if (keyWord.length < 0) return;
     const _list = _.cloneDeep(listRanking);
+    if(keyWord.length <= 0) return;
     const keyWordByList = _list.filter(
       (item) =>
         item.id.includes(keyWord.toLowerCase()) ||

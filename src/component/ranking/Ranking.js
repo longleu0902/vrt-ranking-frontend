@@ -48,9 +48,7 @@ export const Ranking = () => {
       }
 
     }
-
     // get data speed skating women
-
     if (id == 2) {
       setList([]);
       return;
