@@ -9,10 +9,11 @@ import { ProfilePLayer } from "../profile-player";
 export const HomeSearch = () => {
   const [keyWord, setKeyWord] = useState("");
   const listRanking = useSelector((state) => state.dataRanking.list);
+
   const [list, setList] = useState([]);
   const filterList = () => {
+    if (keyWord.length < 0) return;
     const _list = _.cloneDeep(listRanking);
-    if(keyWord.length < 0) return;
     const keyWordByList = _list.filter(
       (item) =>
         item.id.includes(keyWord.toLowerCase()) ||
@@ -22,7 +23,7 @@ export const HomeSearch = () => {
   };
 
   const [open, setOpen] = useState(false);
-  const [dataModal , setDataModal] = useState({})
+  const [dataModal, setDataModal] = useState({})
   const showDrawer = () => {
     setOpen(true);
   };
@@ -33,7 +34,7 @@ export const HomeSearch = () => {
   const hanldeInfo = (data) => {
     console.log("check data search", data);
     setDataModal(data)
-    showDrawer(); 
+    showDrawer();
     setKeyWord("");
   };
   useEffect(() => {
@@ -56,7 +57,7 @@ export const HomeSearch = () => {
           />
           <div className="line-search"></div>
           <SearchOutlined />
-          {keyWord.length > 0 && (
+          {keyWord.length > 0  && (
             <div className="item-search">
               <List
                 itemLayout="horizontal"
@@ -79,7 +80,7 @@ export const HomeSearch = () => {
           )}
         </div>
       </div>
-      <ProfilePLayer data={dataModal} open={open} onClose={onClose} />  
+      <ProfilePLayer data={dataModal} open={open} onClose={onClose} />
     </div>
   );
 };
