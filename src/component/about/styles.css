@@ -125,8 +125,9 @@
     border: none;
     cursor: pointer;
     margin: 0 5px;
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
     transition: 0.3s;
+    background-color: #fff;
   }
   
   .button-about button:hover {
