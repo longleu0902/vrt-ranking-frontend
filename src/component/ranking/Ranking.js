@@ -42,13 +42,6 @@ export const Ranking = () => {
         setList(listRankingStore);
         return;
       }
-      if (checkedList == "6") {
-        setList([]);
-        return;
-      }
-
-    }
-    // get data speed skating women
     if (id == 2) {
       setList([]);
       return;
