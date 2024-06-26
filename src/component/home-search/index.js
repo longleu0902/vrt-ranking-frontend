@@ -41,11 +41,6 @@ export const HomeSearch = () => {
   }, [keyWord]);
   return (
     <div className="container-home-search">
-      {/* <div style={{ gap: "10px", display: "flex" }}>
-        <span style={{ fontWeight: 800 }}>Home</span> 
-        <CaretRightOutlined />
-        <span>Search</span>
-      </div> */}
       <div className="search-home">
         <div className="Search-btn">
           <input

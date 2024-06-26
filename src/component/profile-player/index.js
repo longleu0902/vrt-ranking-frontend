@@ -4,13 +4,19 @@ import {
   MailFilled,
   EnvironmentFilled,
   CalendarFilled,
+  ArrowRightOutlined,
 } from "@ant-design/icons";
 import "./styles.css";
 import { TimelineView } from "../Timeline/Timeline";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const ProfilePLayer = (props) => {
   const { onClose, open, data } = props;
+  const navigate = useNavigate();
+  const showProfileTeam = (data) => {
+    navigate("/profile-team" , {state : data});
+  };
 
   const achievements = [
     { id: 1, date: "01/01/2023", achievement: "Đoạt Huy chương Vàng Olympic" },
@@ -28,7 +34,7 @@ export const ProfilePLayer = (props) => {
     },
   ];
   return (
-    <Drawer 
+    <Drawer
       width={640}
       placement="right"
       closable={true}
@@ -152,9 +158,27 @@ export const ProfilePLayer = (props) => {
                     <p>Name :</p>
                     <p>Founding : </p>
                   </Col>
-                  <Col span={17}>
+                  <Col span={10}>
                     <p>{data?.team ? data?.team : "nothing"}</p>
                     <p>11/11/2020</p>
+                  </Col>
+                  <Col span={7}>
+                    <p
+                      onClick={() => showProfileTeam(data?.team)}
+                      style={{
+                        color: "#fff",
+                        display: "flex",
+                        gap: 5,
+                        cursor: "pointer",
+                        justifyContent: "center",
+                        padding: "4px 0px",
+                        borderRadius: 5,
+                        backgroundColor: "#000",
+                      }}
+                    >
+                      <span>More</span>
+                      <ArrowRightOutlined />
+                    </p>
                   </Col>
                 </Row>
               </div>

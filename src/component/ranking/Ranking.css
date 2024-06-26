@@ -1,5 +1,15 @@
-.container {
-    padding: 6px 12px;
+.container-ranking {
+    padding: 0px 0px;
+}
+
+.header-ranking {
+    background-color: #ccc;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 140px;
+    background-image: url(/public/banner-ranking.png);
+    color: #fff;
 }
 .title {
     /* display: flex; */
@@ -11,6 +21,7 @@
     display: flex;
     align-items: center;
     padding: 12px 12px;
+    gap: 12px;
 }
 .title-ranking{
     display: flex;
@@ -33,23 +44,21 @@
     color: #fff;
 }
 
-.custom-checkbox .ant-checkbox-inner {
-    background-color: #000; /* Màu nền của checkbox */
-    border-color: rgb(170, 170, 187); /* Màu viền của checkbox */
-  }
-  
-  .custom-checkbox .ant-checkbox-inner::after {
-    border-color: white; /* Màu của dấu check */
-  }
 
 
-  @media (min-width:0px) and (max-width:695px) {}
+  @media (min-width:0px) and (max-width:695px) {
+    .choose-age {
+        overflow: scroll;
+        width: 80%;
+        scrollbar-width: none;
+    }
+  }
 
   @media (min-width:696px) and (max-width:1023px) {}
 
   @media (min-width:1024px) {
       .container {
-          margin: 0 50px;
+        /* margin: 0 50px; */
       }
   }
 

@@ -19,11 +19,11 @@ export const TimelineView = (props) => {
             color="rgb(133, 30, 30)"
             key={index}
           >
-            <a className="text-timeline" style={{ color: "#000" }}>
+            <a className="text-timeline" style={{ color:props.textColor || "#000" }}>
               {item?.achievement}
               {` `}
             </a>
-            ngày
+            <span  style={{ color:props.textColor || "#000" }} >ngày</span>
             <a className="text-timeline" style={{ color: "red" }}>
               {` `}
               {item?.date}

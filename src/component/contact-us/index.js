@@ -5,7 +5,7 @@ import "./styles.css";
 export const Contact = () => {
 
     return (
-        <div className="background-contact">
+      <div className="background-contact">
         <Row gutter={24}>
           <Col
             xs={{ span: 24 }}
@@ -21,16 +21,19 @@ export const Contact = () => {
           <Col
             xs={{ span: 24 }}
             lg={{ span: 12 }}
-            style={{ height: 400, backgroundColor: "#ffe5cd" }}
+            style={{
+              height: 400,
+              // backgroundColor: "#ffe5cd",
+            }}
           >
             <div className="text-contact">
               <p className="text-contact">
-                Việc kiên trì là vô cùng quan trọng khi nói đến việc huấn luyện và
-                thể thao. Các buổi tập đều đặn, dinh dưỡng đúng cách và giấc ngủ
-                đủ là những thành phần quan trọng giúp cơ thể của bạn thích ứng,
-                trở nên mạnh mẽ và hoạt động tốt nhất. Đặt ra mục tiêu cụ thể và
-                theo dõi tiến triển của mình cũng giúp bạn duy trì động lực và
-                trên con đường tiến tới thành công.
+                Việc kiên trì là vô cùng quan trọng khi nói đến việc huấn luyện
+                và thể thao. Các buổi tập đều đặn, dinh dưỡng đúng cách và giấc
+                ngủ đủ là những thành phần quan trọng giúp cơ thể của bạn thích
+                ứng, trở nên mạnh mẽ và hoạt động tốt nhất. Đặt ra mục tiêu cụ
+                thể và theo dõi tiến triển của mình cũng giúp bạn duy trì động
+                lực và trên con đường tiến tới thành công.
               </p>
             </div>
           </Col>
@@ -50,16 +53,19 @@ export const Contact = () => {
           <Col
             xs={{ span: 24 }}
             lg={{ span: 12, order: 1 }}
-            style={{ height: 400, backgroundColor: "#ffe5cd" }}
+            style={{
+              height: 400,
+              // backgroundColor: "#ffe5cd",
+            }}
           >
             <div className="text-contact">
               <p className="text-contact">
-                Việc kiên trì là vô cùng quan trọng khi nói đến việc huấn luyện và
-                thể thao. Các buổi tập đều đặn, dinh dưỡng đúng cách và giấc ngủ
-                đủ là những thành phần quan trọng giúp cơ thể của bạn thích ứng,
-                trở nên mạnh mẽ và hoạt động tốt nhất. Đặt ra mục tiêu cụ thể và
-                theo dõi tiến triển của mình cũng giúp bạn duy trì động lực và
-                trên con đường tiến tới thành công.
+                Việc kiên trì là vô cùng quan trọng khi nói đến việc huấn luyện
+                và thể thao. Các buổi tập đều đặn, dinh dưỡng đúng cách và giấc
+                ngủ đủ là những thành phần quan trọng giúp cơ thể của bạn thích
+                ứng, trở nên mạnh mẽ và hoạt động tốt nhất. Đặt ra mục tiêu cụ
+                thể và theo dõi tiến triển của mình cũng giúp bạn duy trì động
+                lực và trên con đường tiến tới thành công.
               </p>
             </div>
           </Col>
@@ -79,16 +85,19 @@ export const Contact = () => {
           <Col
             xs={{ span: 24 }}
             lg={{ span: 12 }}
-            style={{ height: 400, backgroundColor: "#ffe5cd" }}
+            style={{
+              height: 400,
+              // backgroundColor: "#ffe5cd"
+            }}
           >
             <div className="text-contact">
               <p className="text-contact">
-                Việc kiên trì là vô cùng quan trọng khi nói đến việc huấn luyện và
-                thể thao. Các buổi tập đều đặn, dinh dưỡng đúng cách và giấc ngủ
-                đủ là những thành phần quan trọng giúp cơ thể của bạn thích ứng,
-                trở nên mạnh mẽ và hoạt động tốt nhất. Đặt ra mục tiêu cụ thể và
-                theo dõi tiến triển của mình cũng giúp bạn duy trì động lực và
-                trên con đường tiến tới thành công.
+                Việc kiên trì là vô cùng quan trọng khi nói đến việc huấn luyện
+                và thể thao. Các buổi tập đều đặn, dinh dưỡng đúng cách và giấc
+                ngủ đủ là những thành phần quan trọng giúp cơ thể của bạn thích
+                ứng, trở nên mạnh mẽ và hoạt động tốt nhất. Đặt ra mục tiêu cụ
+                thể và theo dõi tiến triển của mình cũng giúp bạn duy trì động
+                lực và trên con đường tiến tới thành công.
               </p>
             </div>
           </Col>
@@ -108,20 +117,23 @@ export const Contact = () => {
           <Col
             xs={{ span: 24 }}
             lg={{ span: 12, order: 1 }}
-            style={{ height: 400, backgroundColor: "#ffe5cd" }}
+            style={{
+              height: 400,
+              //  backgroundColor: "#ffe5cd"
+            }}
           >
             <div className="text-contact">
               <p className="text-contact">
-                Việc kiên trì là vô cùng quan trọng khi nói đến việc huấn luyện và
-                thể thao. Các buổi tập đều đặn, dinh dưỡng đúng cách và giấc ngủ
-                đủ là những thành phần quan trọng giúp cơ thể của bạn thích ứng,
-                trở nên mạnh mẽ và hoạt động tốt nhất. Đặt ra mục tiêu cụ thể và
-                theo dõi tiến triển của mình cũng giúp bạn duy trì động lực và
-                trên con đường tiến tới thành công.
+                Việc kiên trì là vô cùng quan trọng khi nói đến việc huấn luyện
+                và thể thao. Các buổi tập đều đặn, dinh dưỡng đúng cách và giấc
+                ngủ đủ là những thành phần quan trọng giúp cơ thể của bạn thích
+                ứng, trở nên mạnh mẽ và hoạt động tốt nhất. Đặt ra mục tiêu cụ
+                thể và theo dõi tiến triển của mình cũng giúp bạn duy trì động
+                lực và trên con đường tiến tới thành công.
               </p>
             </div>
           </Col>
         </Row>
       </div>
-    )
+    );
 }

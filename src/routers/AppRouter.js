@@ -5,7 +5,7 @@ import { Events } from "../component/Events"
 import { About } from "../component/about"
 import { Contact } from "../component/contact-us"
 import { NewDetail } from "../component/news-detail";
-
+import { ProfileTeam } from "../component/profile-team"
 
 
 
@@ -21,6 +21,8 @@ export const AppRouter = () => {
           <Route path="/news-detail" element={<NewDetail />} />
           <Route path="/events/news-detail" element={<NewDetail />} />
           <Route path="/ranking/:id/:slug/news-detail" element={<NewDetail />} />
+          <Route path="/profile-team" element={<ProfileTeam />} />
+          
         </Routes>
       </>
     );

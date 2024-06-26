@@ -48,6 +48,7 @@ export const HomeTableRanking = () => {
     setOpen(false);
   };
 
+
   const handleRowClick = (record) => {
     console.log("Clicked row:", record); // Log the clicked row data
     setDataModal({...record})
@@ -62,6 +63,7 @@ export const HomeTableRanking = () => {
       </div>
       <div style={{ padding: "24px 0" }}></div>
       <Table
+        style={{ cursor: "pointer" }}
         dataSource={fakeData}
         responsive="true"
         size="small"

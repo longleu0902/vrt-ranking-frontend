@@ -9,6 +9,7 @@ import { Tabs, ConfigProvider } from "antd";
 import { RankByAge } from "../../Data/default-ranking-tab";
 import { useDispatch, useSelector } from "react-redux";
 import { setListRanking } from "../../Redux/data-ranking-reducer";
+import { ButtonCustom } from "../Button/Button";
 
 export const Ranking = () => {
   const dispatch = useDispatch();
@@ -18,11 +19,10 @@ export const Ranking = () => {
   const { slug, id } = useParams();
 
   const getData = () => {
-
     // Get data speed skating man
     if (id == 1) {
       if (checkedList == "1") {
-        console.log("check")
+        console.log("check");
         setList(listRankingStore);
         return;
       }
@@ -46,7 +46,6 @@ export const Ranking = () => {
         setList([]);
         return;
       }
-
     }
 
     // get data speed skating women
@@ -61,49 +60,48 @@ export const Ranking = () => {
 
   useEffect(() => {
     getData();
-  }, [id , checkedList]);
-
+  }, [id, checkedList]);
 
   const [modalLogin, setModalLogin] = useState(false);
 
   const onChange = (key) => {
-
-    console.log("check age",typeof key)
+    console.log("check age", key);
     setCheckedList([...key]);
   };
-
 
   useEffect(() => {
     onChange("1");
   }, []);
 
   return (
-    <div className="container">
-      <div className="title-ranking">
-        <h3 style={{ textAlign: "start" }}>
-          RANKING {slug.toUpperCase().replace(/-/g, " ")}
-        </h3>
-        <button onClick={() => setModalLogin(true)} className="btn-login">
+    <div className="container-ranking">
+      <div className="header-ranking">
+        <div className="title-ranking">
+          <h3 style={{ textAlign: "start" }}>
+            RANKING {slug.toUpperCase().replace(/-/g, " ")}
+          </h3>
+          {/* <button onClick={() => setModalLogin(true)} className="btn-login">
           <UserOutlined />
           <a style={{ margin: "0 5px" }}>Login</a>
-        </button>
-      </div>
-
-      {(id == 1 || id == 2 || id == 3 || id == 4) && (
-        <div className="choose-age">
-          <ConfigProvider
-            theme={{
-              token: {
-                colorPrimary: "#000",
-                borderRadius: 2,
-                colorBgContainer: "#f6ffed",
-              },
-            }}
-          >
-            <Tabs defaultActiveKey="1" items={RankByAge} onChange={onChange} />
-          </ConfigProvider>
+        </button> */}
         </div>
-      )}
+
+        {(id == 1 || id == 2 || id == 3 || id == 4) && (
+          <div className="choose-age">
+            {RankByAge.map((item, index) => {
+              return (
+                <ButtonCustom
+                  key={index}
+                  label={item?.label}
+                  onChange={onChange}
+                  value={item?.key}
+                  active={checkedList}
+                />
+              );
+            })}
+          </div>
+        )}
+      </div>
 
       {id == 1 || id == 2 || id == 3 || id == 4 ? (
         <>

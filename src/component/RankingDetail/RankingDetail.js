@@ -11,8 +11,14 @@ import { Avatar, Modal } from "antd";
 import { UserOutlined } from "@ant-design/icons";
 import { InfoPlayer } from "../info-player";
 
+// typeProps = {
+//   list : array ,
+//   type : listTeam || null
+// }
+
+
 export const RankingDetail = (props) => {
-  const { list } = props;
+  const { list, type } = props;
   const [keyWord, setKeyWord] = useState("");
   const itemRef = useRef(null);
   const [modalInfo, setModalInfo] = useState(false);
@@ -32,7 +38,7 @@ export const RankingDetail = (props) => {
         if (element) {
           const yOffset = -100;
           const y = element.offsetTop + yOffset;
-          window.scrollTo({ top: y, behavior: "smooth" });
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
         }
       }
     }
@@ -53,9 +59,6 @@ export const RankingDetail = (props) => {
 
   return (
     <>
-      <button className="btn-export" onClick={exportToExcel}>
-        Export to Excel
-      </button>
       <div className="table-ranking">
         <div className="tab-ranking">
           <div className="search">
@@ -80,99 +83,123 @@ export const RankingDetail = (props) => {
             style={{ textAlign: "center", justifyContent: "center" }}
             className="team"
           >
-            Team
+            {type == "listTeam" ? "Category" : "Team"}
           </p>
           <p className="age">Age</p>
           <p className="point">Point</p>
           <p className="rank">Rank</p>
         </div>
-        {list.map((item, index) => {
-          const defaultBackGround = (index) => {
-            if (index % 2 == 0) {
-              return "#fcf9f9";
-            }
-          };
-
-          const topRankingIcon = (index) => {
-            if (index == 0) {
-              return no1;
-            }
-            if (index == 1) {
-              return no2;
-            }
-            if (index == 2) {
-              return no3;
-            }
-          };
-          return (
-            <div
-              key={index}
-              onClick={() => handleMovePlayerInfo(item)}
-              ref={keyWord === item.id ? itemRef : null}
-              className="item-ranking"
-              style={{
-                backgroundColor:
-                  keyWord == item.id
-                    ? "rgb(249, 106, 106)"
-                    : defaultBackGround(index),
-              }}
-            >
-              <div style={{ padding: "0 6px" }} className="search">
-                {item.id}
-              </div>
-              <div style={{ padding: "0 24px" }} className="name">
-                <div className="avatar-name">
-                  {item.avatar !== null ? (
-                    <img
-                      style={{ width: 30, height: 30 }}
-                      className="logo"
-                      src={item?.avatar}
-                      alt="Logo"
-                    />
-                  ) : (
-                    <Avatar size="large" icon={<UserOutlined />} />
-                  )}
-                </div>
-                <p>{item?.name}</p>
-              </div>
-              <div style={{ padding: "0 24px" }} className="team">
-                <div className="avatar-team">
-                  {item.logoTeam !== null ? (
-                    <img
-                      style={{ width: 30, height: 30 }}
-                      className="logo"
-                      src={item?.logoTeam}
-                      alt="Logo"
-                    />
-                  ) : (
-                    <Avatar size="large" icon={<UserOutlined />} />
-                  )}
-                </div>
-                <p>{item?.team}</p>
-              </div>
-              <p className="age">{item?.age}</p>
-              <p className="point">{item?.point}</p>
-              <p
+        <div style={{ height: 600, overflow: "scroll" }}>
+          {list.map((item, index) => {
+            const topRankingIcon = (index) => {
+              if (index == 0) {
+                return no1;
+              }
+              if (index == 1) {
+                return no2;
+              }
+              if (index == 2) {
+                return no3;
+              }
+            };
+            return (
+              <div
+                key={index}
+                onClick={() => handleMovePlayerInfo(item)}
+                ref={keyWord === item.id ? itemRef : null}
+                className="item-ranking"
                 style={{
-                  // color : index < 3 ?'red' : '#000',
-                  fontWeight: index < 3 ? "900" : "400",
-                  fontSize: index < 3 ? "16px" : "14px",
+                  backgroundColor:
+                    keyWord == item.id ? "rgb(249, 106, 106)" : "#fff",
                 }}
-                className="rank"
               >
-                {index < 3 ? (
-                  <img
-                    className="top-ranking-icon"
-                    src={topRankingIcon(index)}
-                  />
-                ) : (
-                  item?.rank
-                )}
-              </p>
-            </div>
-          );
-        })}
+                <div style={{ padding: "0 0px" }} className="search">
+                  {item.id}
+                </div>
+                <div style={{ padding: "0 0px" }} className="name">
+                  <div className="avatar-name">
+                    {item.avatar !== null ? (
+                      <img
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          borderRadius: "50%",
+                        }}
+                        className="logo"
+                        src={item?.avatar}
+                        alt="Logo"
+                      />
+                    ) : (
+                      <Avatar
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          borderRadius: "50%",
+                        }}
+                        size="large"
+                        icon={<UserOutlined />}
+                      />
+                    )}
+                  </div>
+                  <p style={{ fontWeight: "700" }}>{item?.name}</p>
+                </div>
+                <div
+                  style={{
+                    padding: "0 0px",
+                    justifyContent: type == "listTeam" ? "center" : "",
+                  }}
+                  className="team"
+                >
+                  {type !== "listTeam" ? (
+                    <>
+                      <div className="avatar-team">
+                        {item.logoTeam !== null ? (
+                          <img
+                            style={{ width: "100%", height: "100%" }}
+                            className="logo"
+                            src={item?.logoTeam}
+                            alt="Logo"
+                          />
+                        ) : (
+                          <Avatar size="large" icon={<UserOutlined />} />
+                        )}
+                      </div>
+                      <p>{item?.team}</p>
+                    </>
+                  ) : (
+                    <>{item?.category}</>
+                  )}
+                </div>
+                <p className="age">{item?.age}</p>
+                <p style={{ color: "rgb(22, 163, 74)" }} className="point">
+                  {item?.point}
+                </p>
+                <p
+                  style={{
+                    // color : index < 3 ?'red' : '#000',
+                    fontWeight: index < 3 ? "900" : "400",
+                    fontSize: index < 3 ? "16px" : "14px",
+                  }}
+                  className="rank"
+                >
+                  {index < 3 ? (
+                    <img
+                      className="top-ranking-icon"
+                      src={topRankingIcon(index)}
+                    />
+                  ) : (
+                    item?.rank
+                  )}
+                </p>
+              </div>
+            );
+          })}
+        </div>
       </div>
+
+      <button className="btn-export" onClick={exportToExcel}>
+        Export to Excel
+      </button>
       <Modal
         title="INFOMATION"
         centered

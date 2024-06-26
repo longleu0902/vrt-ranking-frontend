@@ -1,0 +1,38 @@
+.container-profile-team {
+    /* background-color: #282e34; */
+
+
+}
+
+.info-team {
+    padding: 24px 50px;
+    background-color: #282e34;
+    text-align: start;
+
+
+
+}
+
+.logo-profile-team {
+    height: 150px;
+    margin-top: 12px;
+}
+
+.logo-profile-team img {
+    width: 100%;
+    height: 100%;
+}
+
+.information-profile-team {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 12px;
+
+}
+
+.text-profile-team {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+}
