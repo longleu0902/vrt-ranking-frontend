@@ -103,6 +103,10 @@ export const HeaderHome = () => {
     setCurrentIndex((prevIndex) =>
       Math.min(prevIndex + 1, renderPlayerTop.length - 1)
     );
+    // console.log("currentIndex", currentIndex)
+    if(currentIndex == Math.min( renderPlayerTop.length - 2)){
+      setCurrentIndex(0)
+    }
   };
 
   const hanldShowInfo = (data) => {

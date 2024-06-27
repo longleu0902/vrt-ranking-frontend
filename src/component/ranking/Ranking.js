@@ -2,14 +2,13 @@ import { useParams } from "react-router-dom";
 import './Ranking.css';
 import { RankingDetail } from "../RankingDetail/RankingDetail";
 import { useEffect, useState } from "react";
-import { Checkbox, Modal } from "antd";
-import { UserOutlined } from "@ant-design/icons";
+import {  Modal } from "antd";
 import { LoginFrom } from "../login-form";
-import { Tabs, ConfigProvider } from "antd";
 import { RankByAge } from "../../Data/default-ranking-tab";
 import { useDispatch, useSelector } from "react-redux";
 import { setListRanking } from "../../Redux/data-ranking-reducer";
 import { ButtonCustom } from "../Button/Button";
+import { ActivityIndicator } from "../ActivityIndicator";
 
 export const Ranking = () => {
   const dispatch = useDispatch();
@@ -17,13 +16,22 @@ export const Ranking = () => {
   const [checkedList, setCheckedList] = useState([]);
   const [list, setList] = useState([]);
   const { slug, id } = useParams();
+  const [loading, setLoading] = useState(false);
 
   const getData = () => {
+    setLoading(true);
     // Get data speed skating man
     if (id == 1) {
       if (checkedList == "1") {
         console.log("check");
         setList(listRankingStore);
+
+        /* wait responsible */
+        setTimeout(()=>{
+          setLoading(false);
+        },500)
+        /* wait responsible */
+
         return;
       }
       if (checkedList == "2") {
@@ -102,21 +110,31 @@ export const Ranking = () => {
           </div>
         )}
       </div>
-
-      {id == 1 || id == 2 || id == 3 || id == 4 ? (
-        <>
-          {checkedList &&
-            checkedList.map((item, index) => {
-              return (
-                <div key={index}>
-                  <RankingDetail list={list} />
-                </div>
-              );
-            })}
-        </>
-      ) : (
-        <RankingDetail list={list} />
+      {loading && (
+        <div style={{ height: "100vh", marginTop: 100  }}>
+          <ActivityIndicator/>
+        </div>
       )}
+
+      {loading == false && (
+        <>
+          {id == 1 || id == 2 || id == 3 || id == 4 ? (
+            <>
+              {checkedList &&
+                checkedList.map((item, index) => {
+                  return (
+                    <div key={index}>
+                      <RankingDetail list={list} />
+                    </div>
+                  );
+                })}
+            </>
+          ) : (
+            <RankingDetail list={list} />
+          )}
+        </>
+      )}
+
       <Modal
         centered
         open={modalLogin}

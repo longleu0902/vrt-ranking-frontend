@@ -51,6 +51,7 @@ export const ProfileTeam = () => {
             </Col>
           </Row>
         </div>
+        <h3>LIST OF PLAYER ON YOUR TEAM</h3>
         <RankingDetail type={'listTeam'} list={fakeData} />
       </div>
     </>
