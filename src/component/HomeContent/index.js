@@ -23,10 +23,10 @@ export const HomeContent = () => {
         {list &&
           list.map((item, index) => {
             return (
-              <Col key={index} xs={24} sm={12} md={8} lg={8} xl={8}>
+              <Col className="check" key={index} xs={24} sm={12} md={8} lg={8} xl={8}>
                 <div
                   onClick={() => hanldeClickItem(item)}
-                  className="home-item"
+                  className="home-item "
                 >
                   <img src={item?.img} />
                   <div className="item-description">
